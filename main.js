@@ -120,11 +120,15 @@ let cooldown = setInterval(function timer() {
       // timerVideo.play();
   }
 }, 1000);
+if(timerVideo){
+  
+  timerVideo.addEventListener('ended', function() {
+      this.style.display = 'none';
+      }
+  )
+}
 
-timerVideo.addEventListener('ended', function() {
-    this.style.display = 'none';
-    }
-)
+
 
 let audio = ("./Its Done. Its Over..mp3");
 let sound = new Audio(audio);
