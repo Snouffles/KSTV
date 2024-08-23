@@ -1,0 +1,32 @@
+html{
+    background-color: rgb(88, 168, 181);
+    color: rgb(255, 255, 255);
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#time{
+    font-size: 6vh;
+    margin-left: 1vh;
+    margin-top: 1vh;
+}
+
+
+.boxDatum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+}
+
+#date{
+    font-size: 10vh;
+}
+#vecka{
+    font-size: 6vh;
+    justify-self:baseline;
+    margin-top: 15vh;
+}

@@ -1,0 +1,15 @@
+#timerVideo{
+    display: none;
+}
+.boxFrånvaro{
+    display: flex;
+    flex-flow: row;
+}
+.personal{
+    color: blue;
+    display: flex;
+}
+.personal input{
+    margin-right: 20px;
+}
+                

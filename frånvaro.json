@@ -1,0 +1,95 @@
+{
+    "frånvaro": [
+      {
+        "firstName": "Lisa",
+        "familyName":"Norming",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Göran",
+        "familyName":"Christersson Mahlin",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Olof",
+        "familyName":"Lövdén",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Donovan",
+        "familyName":"Payan",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Joel",
+        "familyName":"Strandberg",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Lisa",
+        "familyName":"Tradefelt",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Mattias",
+        "familyName":"Petersson",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Monia",
+        "familyName":"Dgachi",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Melina",
+        "familyName":"Do Rosario",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Roni",
+        "familyName":"Ali",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Sandra",
+        "familyName":"Hiredal",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Seidi",
+        "familyName":"Can",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Stefan",
+        "familyName":"Schöning",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Viktor",
+        "familyName":"Elander",
+        "photo": "",
+        "present": "true"
+      },
+      {
+        "firstName": "Yvonne",
+        "familyName":"Grahn",
+        "photo": "",
+        "present": "true"
+      }
+   
+    ]
+  }
