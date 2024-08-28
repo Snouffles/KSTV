@@ -1,3 +1,13 @@
+*{margin:0}
+
+html{
+    background-color: rgb(88, 168, 181);
+    color: rgb(255, 255, 255);
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 #timerVideo{
     display: none;
 }
@@ -6,10 +16,82 @@
     flex-flow: row;
 }
 .personal{
-    color: blue;
     display: flex;
 }
 .personal input{
     margin-right: 20px;
 }
+
+#setting{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
                 
+#time{
+    font-size: 6vh;
+
+    display: flex;
+    width: 100vh;
+    height: 100%;
+    justify-content: center;
+   
+    position:absolute;
+    z-index: -1;
+}
+
+.box{
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+
+.boxDatum{
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+
+}
+
+#date{
+    font-size: 10vh;
+}
+#vecka{
+    font-size: 6vh;
+    justify-self:baseline;
+    margin-top: 15vh;
+}
+
+#backToSettings {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: none; /* Hidden by default */
+}
+
+#box_2{
+    display: none;
+    display: flex;
+    padding: 10vh 0 0 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+   
+}
+#lunchDisplay{
+    margin:10vh 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box_2 h2{
+    font-size: 10vh;
+    text-align: center; 
+}

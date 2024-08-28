@@ -5,29 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&Permanent+Marker&display=swap" rel="stylesheet">
     <title>Frånvaro</title>
 </head>
 <body>
     <div id="time"></div>
-    <h2>Frånvaro</h1>
-    <div class="boxFrånvaro">
-        <ul id="personalList"></ul>
-   
-        <ul id="frånvaroList">Borta</ul>
-    </div>
-    <h2>Lunch</h2>
-    <div class="boxLunch">
-        <ul id="lunchList"></ul>
-    </div>
+    <div id="setting">
+        <h2>Frånvaro</h2>
+        <div class="boxFrånvaro">
+            <ul id="personalList"></ul>
+            <ul id="frånvaroList">Borta</ul>
+        </div>
+        <h2>Lunch</h2>
+            <div class="boxLunch">
+                <input type="text" id="lunchName"></inputs>
+                <button id="lunchOk">ok</button>
+                <div>
+                    <div>Lunch: </div>   
+                    <div id="lunchList"></div>
+                </div>
+            </div>
 
-    <script src="main.js"></script>
-    <h2>Rast Aktiviteter</h2>
-    <ul id="personalList"></ul>
-    <ul></ul>
-    <ul></ul>
-    <button onclick="window.location.href='frånvaro.html'">Frånvaro</button>
-    <button onclick="window.location.href='index.html'">Index</button>
-    <button onclick="window.location.href='datum.html'">Datum</button>
+        <h2>Rast Aktiviteter</h2>
+        <div class="rast">
+            <div>
+                <label id="activity1">Aktivitet 1:</label>
+                <select class="lunchPersonal" id="lunchPersonal1">
+                    <option>väljer en lärare</option>
+                </select>
+            
+                <select class="lunchActivity" id="lunchActivity1">
+                    <option>väljer ett aktivitet</option>
+                </select>
+                <button id="activity1_button1">ok</button>
+            </div>
+            <ol id="listOfActivity">Lista: </ol>
+
+        </div>
+        <button id="button_start">START</button>
+    
+    </div>
+    <div class="box" id="box_1">
+        <div class="boxDatum">
+            <div id="date"></div>
+            <div id="vecka">Vecka: </div>
+        </div>
+    </div>
+    <div class="box" id="box_2">
+        <h2>LUNCH</h2>
+        <div id="lunchDisplay">OUAIS OUAIS OUAIS</div>
+
+    </div>
+    <button id="backToSettings">TILLBAKA</button>
+        
+    
+    
+<script src="main.js"></script>
+   
 </body>
 </html>
-S
