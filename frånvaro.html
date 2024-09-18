@@ -19,7 +19,9 @@
         </div>
         <h2>Lunch</h2>
             <div class="boxLunch">
-                <input type="text" id="lunchName"></inputs>
+                
+                Huvudrätt<input type="text" id="lunchName"></inputs>
+                vegetarisk<input type="text" id="lunchName_veg"></inputs>
                 <button id="lunchOk">ok</button>
                 <div>
                     <div>Lunch: </div>   
@@ -28,21 +30,22 @@
             </div>
 
         <h2>Rast Aktiviteter</h2>
-        <div class="rast">
-            <div>
-                <label id="activity1">Aktivitet 1:</label>
-                <select class="lunchPersonal" id="lunchPersonal1">
-                    <option>väljer en lärare</option>
-                </select>
-            
-                <select class="lunchActivity" id="lunchActivity1">
-                    <option>väljer ett aktivitet</option>
-                </select>
-                <button id="activity1_button1">ok</button>
-            </div>
-            <ol id="listOfActivity">Lista: </ol>
+        
+        <div id="activity-container">
+            <div id="activityList"></div>
+<button id="addActivityBtn">Add Activity</button>
 
+<!-- Modal for adding/editing activities -->
+<div id="activityModal" style="display:none;">
+    <select id="personalSelect"></select>
+    <select id="activitySelect"></select>
+    <input type="text" id="customInput" placeholder="Enter custom activity" style="display:none;"/>
+    <button id="saveActivityBtn">Save</button>
+    <button id="cancelActivityBtn">Cancel</button>
+</div>
         </div>
+
+       
         <button id="button_start">START</button>
     
     </div>
@@ -54,11 +57,22 @@
     </div>
     <div class="box" id="box_2">
         <h2>LUNCH</h2>
-        <div id="lunchDisplay">OUAIS OUAIS OUAIS</div>
-
+        <div id="lunchDisplay"></div>
+        <div id="lunchDisplay_veg"></div>
+    </div>
+    <div class="box" id="box_3">
+        <h2>Personal Frånvaro</h2>
+        <div id="frånvaro_display"></div>
     </div>
     <button id="backToSettings">TILLBAKA</button>
-        
+    <div class="box" id="box_4">
+        <h2>Veckans quiz</h2>
+        <div id="quiz">Flaggor</div>
+        <img id="quiz_img" src="./asset/quiz img/quiz.png" alt="quiz"/>
+    </div>
+    <div id="box_activity">
+
+    </div>
     
     
 <script src="main.js"></script>

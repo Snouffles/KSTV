@@ -77,7 +77,6 @@ html{
 
 #box_2{
     display: none;
-    display: flex;
     padding: 10vh 0 0 0;
     justify-content: center;
     align-items: center;
@@ -94,4 +93,88 @@ html{
 #box_2 h2{
     font-size: 10vh;
     text-align: center; 
+}
+
+#box_3{
+    display: none;
+    padding: 10vh 0 0 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+}
+
+#box_3 h2{
+    font-size: 10vh;
+    text-align: center; 
+}
+
+#box_3 #frånvaro_display{
+    margin: 10vh 0 0 0;
+}
+
+#box_4{
+    display: none;
+    padding: 10vh 0 0 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+}
+
+#box_4 #quiz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh;
+  font-size: 15vh;
+ 
+}
+
+#box_4 #quiz_img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vh;
+    
+}
+
+#box_activity{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+   
+
+}
+#box_activity div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+
+}
+
+#box_activity h2{
+    display: flex;
+    align-self: flex-start;
+    font-size: 10vh;
+    margin: 20vh 0 0 0;
+    width: 100%;
+
+}
+.activity_name{
+    font-size: 20vh;
+}
+.img_activity{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vh;
+    border-radius: 30px;
+    
+}
+
+#personal_activity{
+    font-size: 4em;
 }

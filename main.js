@@ -8,6 +8,7 @@ let morgonrast = ""
 let timerMinute = 0;
 let timerSeconds = 10;
 let timerVideo = document.getElementById("timerVideo");
+
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(function time(){
       const now = new Date();
@@ -65,9 +66,10 @@ switch(day){
     dayPåSvenska = "Söndag";
   break;
   default:
-    dayPåSvenska = "";
+   
   
 }
+
 
 let cooldown = setInterval(function timer() {
   // Ensure timerMinute and timerSeconds are numbers
@@ -421,6 +423,9 @@ if(personal){
 }
 })
 
+
+
+
 //If checkbox checked add the personal into the frånvaro list, if unchecked, remove it. 
 document.addEventListener('DOMContentLoaded', () => {
           personalList.forEach(person => {
@@ -430,9 +435,9 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (checkBox.checked) {
                          frånvaroList.push({"firstName":person.firstName, "familyName":person.familyName});
                          document.getElementById("frånvaroList").innerHTML = ``;
+                         console.log(frånvaroList);
                          frånvaroList.forEach(frånvaro =>{
-                          
-                      document.getElementById("frånvaroList").innerHTML += `<div>${frånvaro.firstName} ${frånvaro.familyName}`;
+                          document.getElementById("frånvaroList").innerHTML += `<div>${frånvaro.firstName} ${frånvaro.familyName}`;
                          })
                       } else {
                         frånvaroList = frånvaroList.filter(frånvaro => !(frånvaro.firstName === person.firstName && frånvaro.familyName === person.familyName));
@@ -447,10 +452,24 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 });
 
+//Add frånvaro list to the display box_3
+function getFrånvaro(){
+  let frånvaroDisplay = document.getElementById("frånvaro_display");
+  if(frånvaroList.length === 0){
+    frånvaroDisplay.innerHTML =`<div class="personal">Alla är på plats!</div>`
+     
+  }else{
+    frånvaroList.forEach( person =>{
+    frånvaroDisplay.innerHTML +=`<div class="personal">${person.firstName} ${person.familyName}</div>`
+    })
+  }
+}
+
 
 //save the lunch and display
 
 let lunchInput = document.getElementById("lunchName");
+let lunchInputVeg = document.getElementById("lunchName_veg");
 let lunchButton = document.getElementById("lunchOk");
 let lunchList = document.getElementById("lunchList");
 let lunchDisplay = document.getElementById("lunchDisplay");
@@ -460,7 +479,7 @@ if(lunchButton){
  // Add event listener to the button
  lunchButton.addEventListener("click", function() {
   // Get the value from the input field
-  let lunch = lunchInput.value;
+  let lunch = `${lunchInput.value}<br>${lunchInputVeg.value}`; 
 
   // Check if the input is not empty
   if (lunch !== "") {
@@ -476,95 +495,11 @@ if(lunchButton){
 
 //Activities
 
-let activityOftheday;
-let lunchSelect = document.querySelectorAll(".lunchActivity");
-let activities =["videospel", "coding", "slöjd","pingis",
-                 "idrott","fotbollsplan","badminton","rita",
-                 "brädspel","bibliotek","promenad","Frågesport","löshäst"]
-
-                 
-if(lunchSelect){
-
-    
-      activities.forEach(activity =>{
-        lunchSelect.forEach(select=>{
-          select.innerHTML +=`<option>${activity}</option>`;
-        })
-    })
-  }
-
-  const buttons = document.querySelectorAll('button[id^="activity"]');
-  let activitiesOfTheDay = [];
-  let listOfActivity = document.getElementById("listOfActivity");
-  buttons.forEach(button => {
-      button.addEventListener('click', function() {
-          // Get the ID suffix from the button's ID (e.g., "1" from "activity1_button1")
-          const suffix = button.id.replace('activity1_button', '');
-  
-          // Select the corresponding lunchPersonal and lunchActivity elements
-          const lunchPersonal = document.getElementById('lunchPersonal' + suffix);
-          const lunchActivity = document.getElementById('lunchActivity' + suffix);
-  
-          // Get the selected options
-          const selectedPersonal = lunchPersonal.value;
-          const selectedActivity = lunchActivity.value;
-  
-          // Create an array containing the selected options
-          const alreadyExists = activitiesOfTheDay.some(activity => activity.activities.personal === selectedPersonal);
-          if( selectedPersonal !== "väljer en lärare" || selectedActivity !== "väljer ett aktivitet") {
-            if (!alreadyExists){
-                // Add the selected options to the array as an object
-                activitiesOfTheDay.push({
-                    activities: {
-                        id: suffix,
-                        personal: selectedPersonal,
-                        activity: selectedActivity
-                    }
-                });
-                listOfActivity.innerHTML = "";
-                activitiesOfTheDay.forEach(selection=>{
-                  listOfActivity.innerHTML += `<li>${selection.activities.personal}: ${selection.activities.activity}</li>`
-                })
-            } else {
-                console.log(`The person ${selectedPersonal} is already assigned to an activity.`);
-            }
-          }else{
-            console.log("Gärna välja en lärare och ett aktivitet");
-          }
-
-      });
-  });
-
   let buttonStart = document.getElementById("button_start");
   let settingDisplay = document.getElementById("setting");
   let box_1Display = document.getElementById("box_1");
   let boxes = document.querySelectorAll(".box");
   let displayTimer = "";
-
-
-
-  buttonStart.addEventListener("click", ()=>{
-    settingDisplay.style.display = "none";
-    box_1Display.style.display = "flex";
-
-    const boxes = document.querySelectorAll('.box');
-    let currentIndex = 0;
-
-    function showBox(index) {
-      boxes.forEach((box, i) => {
-        box.style.display = i === index ? 'block' : 'none'; // Show the current box, hide others
-      });
-    }
-
-    displayTimer = setInterval(() => {
-        showBox(currentIndex); // Show the current box
-        currentIndex = (currentIndex + 1) % boxes.length; // Move to the next box, looping back to the start
-    }, 3000); 
-
-    // Initially show the first box
-    showBox(currentIndex);
-  })
-
 
 
 
@@ -580,11 +515,6 @@ if(lunchSelect){
 
   })
 
-
-
-
-
-  
 let timeoutId;
 
 document.addEventListener('mouseover', () => {
@@ -602,4 +532,253 @@ document.addEventListener('mouseover', () => {
   });
 
 
+const activitiesObj = [
+  {måndag:[
+    {personal: "Roni Ali", activity: "Basket"},
+    {personal: "Donovan Payan", activity: "Badminton"},
+    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Yvonne Grahn", activity: "Hundromenad"},
+  ]},
+  {tisdag:[
+    {personal: "Seidi Can", activity: "Spel"},
+    {personal: "Donovan Payan", activity: "Switch"},
+    {personal: "Yvonne Grahn", activity: "Promenad"},
+    {personal: "Ersika", activity: ""},
+  ]},
+  {onsdag:[
+    {personal: "Matthias Petersson", activity: "Pingis"},
+    {personal: "Donovan Payan", activity: "Rita"},
+    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Lisa Norming", activity: "Promenad"},
+    {personal: "Joel Strandberg", activity: "Spel"},
+  ]},
+  {torsdag:[
+    {personal: "Olof Lövdén", activity: "Idrott"},
+    {personal: "Donovan Payan", activity: "Koda"},
+    {personal: "Sandra", activity: "Slöjd"},
+    {personal: "Yvonne", activity: "Promenad"},
+    {personal: "Ersika", activity: "Switch"},
+  ]},
+  {fredag:[
+    {personal: "Viktor Elander", activity: "Quiz"},
+    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Göran Christersson.Mahlin", activity: "Spel"},
+    {personal: "Lisa Norming", activity: "Promenad"},
+  ]},
+];
 
+const personalOptions = [
+  "Roni Ali",
+  "Seidi Can",
+  "Göran Christersson.Mahlin",
+  "Melina Do.Rosario",
+  "Monia Dgachi",
+  "Viktor Elander",
+  "Sandra Hiredal",
+  "Olof Lövdén",
+  "Ersika Simba",
+  "Stefan Schöning",
+  "Joel Strandberg",
+  "Lisa Norming",
+  "Matthias Petersson",
+  "Lisa Tradefelt",
+  "Yvonne Grahn"]
+
+
+
+const activityOptions = 
+[ "Basket",
+  "Badminton", 
+  "Switch", 
+  "Promenad", 
+  "Spel", 
+  "Pingis", 
+  "Rita", 
+  "Idrott", 
+  "Koda", 
+  "Slöjd", 
+  "Quiz", 
+  "Fotboll", 
+  "Kortspel", 
+  "Sola", 
+  "Hundpromenad", 
+  "Innebandy"];
+const img =[
+  {basket: "basket.gif"},
+  {badminton: "badminton.gif"},
+  {hundpromenad : "hundpromenad.gif"},
+  {pingis:"pingis.gif"},
+  {promenad: "promenad.gif"},
+  {spel: "spel.gif"},
+  {rita: "rita.gif"},
+  {idrott: "idrott.png"},
+  {koda: "koda.gif"},
+  {slöjd: "slöjd.gif"},
+  {quiz: "quiz.gif"},
+  {fotboll: "fotboll.gif"},
+  {sola: "sola.gif"},
+  {kortspel: "kortspel.gif"},
+  {innebandy: "innebandy.png"}
+
+]
+
+let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
+
+function renderActivities() {
+    const activityList = document.getElementById("activityList");
+    activityList.innerHTML = "";
+
+    activitiesOfTheDay.forEach((activity, index) => {
+        const activityItem = document.createElement("div");
+        activityItem.className = "activity-item";
+        activityItem.innerHTML = `
+            <span>${activity.personal}: ${activity.activity}</span>
+            <button class="editBtn">Edit</button>
+            <button class="deleteBtn">Delete</button>
+        `;
+
+        activityList.appendChild(activityItem);
+
+        const editBtn = activityItem.querySelector(".editBtn");
+        const deleteBtn = activityItem.querySelector(".deleteBtn");
+
+        // Edit button functionality
+        editBtn.addEventListener('click', () => {
+            showEditForm(activity, index);
+        });
+
+        // Delete button functionality
+        deleteBtn.addEventListener('click', () => {
+            activitiesOfTheDay.splice(index, 1);
+            console.log(activitiesOfTheDay);
+            renderActivities();
+        });
+    });
+}
+
+function showEditForm(activity, index = null) {
+    const modal = document.getElementById("activityModal");
+    const personalSelect = document.getElementById("personalSelect");
+    const activitySelect = document.getElementById("activitySelect");
+    const customInput = document.getElementById("customInput");
+    
+    personalSelect.innerHTML = personalOptions.map(person => 
+        `<option value="${person}" ${person === activity.personal ? 'selected' : ''}>${person}</option>`
+    ).join('');
+
+    activitySelect.innerHTML = activityOptions.map(act => 
+        `<option value="${act}" ${act === activity.activity ? 'selected' : ''}>${act}</option>`
+    ).join('') + '<option value="annat">Annat</option>';
+
+    modal.style.display = "block";
+
+    activitySelect.addEventListener('change', function() {
+        if (this.value === 'annat') {
+            customInput.style.display = "block";
+        } else {
+            customInput.style.display = "none";
+        }
+    });
+
+    const saveBtn = document.getElementById("saveActivityBtn");
+    saveBtn.onclick = function() {
+        const selectedPersonal = personalSelect.value;
+        const selectedActivity = activitySelect.value === "annat" ? customInput.value : activitySelect.value;
+
+        if (index !== null) {
+            activitiesOfTheDay[index] = { personal: selectedPersonal, activity: selectedActivity };
+        } else {
+            activitiesOfTheDay.push({ personal: selectedPersonal, activity: selectedActivity });
+        }
+
+        modal.style.display = "none";
+        console.log(activitiesOfTheDay);
+        renderActivities();
+    };
+
+    const cancelBtn = document.getElementById("cancelActivityBtn");
+    cancelBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+}
+
+document.getElementById("addActivityBtn").addEventListener("click", function() {
+    showEditForm({ personal: "", activity: "" });
+});
+
+// Initial rendering of activities for the day
+renderActivities();
+function getImageForActivity(activity) {
+  const imageObj = img.find(image => image[activity.toLowerCase()]);
+  return imageObj ? imageObj[activity.toLowerCase()] : null;
+}
+
+function ActivitiesDisplay(){
+  console.log(activitiesOfTheDay)
+  p = document.getElementById("box_activity");
+  p.innerHTML ="";
+  if(activitiesOfTheDay.length != 0){
+    let i = 0;
+    activitiesOfTheDay.forEach(person =>{
+      newDiv = document.createElement("div");
+      newDiv.setAttribute("class", "box");
+      i++;
+      let img = getImageForActivity(person.activity.toLowerCase());
+      console.log(img)
+      newDiv.innerHTML += 
+      `<h2>Aktivitet ${i}</h2>
+      <div class="activity_name">${person.activity}</div>
+      <img class="img_activity" src="./asset/activity_img/${img}"/>
+      <div>med ${person.personal}</div>`
+      p.appendChild(newDiv);
+    })
+
+  }else{
+
+  }
+}
+
+
+//end of the pause
+
+if(time){
+
+}
+
+buttonStart.addEventListener("click", ()=>{
+  settingDisplay.style.display = "none";
+  box_1Display.style.display = "flex";
+  getFrånvaro();
+  ActivitiesDisplay();
+  const boxes = document.querySelectorAll('.box');
+  let currentIndex = 0;
+
+  function showBox(index) {
+    boxes.forEach((box, i) => {
+      box.style.display = i === index ? 'block' : 'none'; // Show the current box, hide others
+    });
+  }
+
+  displayTimer = setInterval(() => {
+      showBox(currentIndex); // Show the current box
+      currentIndex = (currentIndex + 1) % boxes.length; // Move to the next box, looping back to the start
+  }, 3000); 
+
+  // Initially show the first box
+  showBox(currentIndex);
+}); 
+
+
+
+let tvspel =[
+  "Gang Beasts",
+  "Super Mario Bros Wonder",
+  "Mario Chase",
+  "Battle Quest",
+  "Metroid Blast",
+  "Luigi's Ghost Mansion",
+  "Sweet Day",
+  "Wii u Party",
+  "Wii Sports Resorts",
+  "Elevval"
+]
