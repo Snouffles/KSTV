@@ -551,6 +551,7 @@ const activitiesObj = [
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Lisa Norming", activity: "Promenad"},
     {personal: "Joel Strandberg", activity: "Spel"},
+    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {torsdag:[
     {personal: "Olof Lövdén", activity: "Idrott"},
@@ -762,7 +763,7 @@ buttonStart.addEventListener("click", ()=>{
   displayTimer = setInterval(() => {
       showBox(currentIndex); // Show the current box
       currentIndex = (currentIndex + 1) % boxes.length; // Move to the next box, looping back to the start
-  }, 3000); 
+  }, 10000); 
 
   // Initially show the first box
   showBox(currentIndex);
