@@ -8,6 +8,7 @@ let morgonrast = ""
 let timerMinute = 0;
 let timerSeconds = 10;
 let timerVideo = document.getElementById("timerVideo");
+let currentTime;
 
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(function time(){
@@ -23,10 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
           
       }
       const time = document.getElementById("time");
-    
+      currentTime = `${hour}:${minute}:${seconds}`;
       time.innerHTML= `${hour}:${minute}:${seconds}`;
+      if(currentTime == "16:14:00"){
+        
+      }
 
   },1000)
+  console.log(currentTime);
 })
 switch(day){
   case 1:
@@ -583,7 +588,8 @@ const personalOptions = [
   "Lisa Norming",
   "Matthias Petersson",
   "Lisa Tradefelt",
-  "Yvonne Grahn"]
+  "Yvonne Grahn",
+"Donovan Payan" ]
 
 
 
@@ -782,4 +788,6 @@ let tvspel =[
   "Wii u Party",
   "Wii Sports Resorts",
   "Elevval"
-]
+];
+
+
