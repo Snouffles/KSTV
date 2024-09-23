@@ -9,30 +9,7 @@ let timerMinute = 0;
 let timerSeconds = 10;
 let timerVideo = document.getElementById("timerVideo");
 let currentTime;
-
-document.addEventListener('DOMContentLoaded', () => {
-  setInterval(function time(){
-      const now = new Date();
-      let hour = now.getHours();
-      let minute = now.getMinutes();
-      if(minute < 10){
-          minute = "0"+minute;
-      }
-      let seconds = now.getSeconds();
-      if(seconds < 10){
-          seconds = "0"+ seconds;
-          
-      }
-      const time = document.getElementById("time");
-      currentTime = `${hour}:${minute}:${seconds}`;
-      time.innerHTML= `${hour}:${minute}:${seconds}`;
-      if(currentTime == "16:14:00"){
-        
-      }
-
-  },1000)
-  console.log(currentTime);
-})
+let audioMusic = document.getElementById("backgroundMusic");
 switch(day){
   case 1:
     dayPåSvenska = "Måndag";
@@ -73,6 +50,48 @@ switch(day){
   default:
    
   
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setInterval(function time(){
+      const now = new Date();
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      if(minute < 10){
+          minute = "0"+minute;
+      }
+      let seconds = now.getSeconds();
+      if(seconds < 10){
+          seconds = "0"+ seconds;
+          
+      }
+      const time = document.getElementById("time");
+      currentTime = `${hour}:${minute}:${seconds}`;
+      time.innerHTML= `${hour}:${minute}:${seconds}`;
+      playAudio(currentTime);
+      
+
+  },1000)
+})
+function playAudio(time){
+  
+  if(dayPåSvenska == "Måndag"){
+    if(time == "11:00:00"){
+      audioMusic.play();
+    }
+  }else if(dayPåSvenska == "Onsdag"){
+    if(time =="10:40:00"){
+      audioMusic.play();
+    }
+  }else{
+    if(time == "10:45:00"){
+      audioMusic.play();
+    }
+  }
+  if(time == "12:50:00"){
+    audioMusic.play();
+  }
+ 
 }
 
 
@@ -392,7 +411,31 @@ let personalList= [ {
   "onsdag":true, 
   "torsdag":true,
   "fredag":true
+},
+{
+  "firstName": "Ersika",
+  "familyName":"Simba",
+  "photo": "",
+  "present": true,
+  "måndag": true,
+  "tisdag":true,
+  "onsdag":true, 
+  "torsdag":true,
+  "fredag":true
+},
+{
+  "firstName": "Alex",
+  "familyName":"Fatehnia",
+  "photo": "",
+  "present": false,
+  "måndag": false,
+  "tisdag":false,
+  "onsdag":true, 
+  "torsdag":true,
+  "fredag":true
 }];
+
+
 let frånvaroList= [];
 const rastPersonnal = document.getElementById("lunchPersonal");
 //print the personal and a checkbox when they are working. 
@@ -522,6 +565,7 @@ if(lunchButton){
 
 let timeoutId;
 
+//show the back button when hovering the page
 document.addEventListener('mouseover', () => {
   if(settingDisplay.style.display == "flex" || settingDisplay.style.display == "" ){
     backToSettings.style.display="none"
@@ -532,7 +576,7 @@ document.addEventListener('mouseover', () => {
     }
       timeoutId = setTimeout(() => {
           backToSettings.style.display = 'none';
-      }, 3000); // 10000 milliseconds = 10 seconds
+      }, 3000);
     }
   });
 
@@ -542,7 +586,7 @@ const activitiesObj = [
     {personal: "Roni Ali", activity: "Basket"},
     {personal: "Donovan Payan", activity: "Badminton"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Yvonne Grahn", activity: "Hundromenad"},
+    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {tisdag:[
     {personal: "Seidi Can", activity: "Spel"},
@@ -560,7 +604,7 @@ const activitiesObj = [
   ]},
   {torsdag:[
     {personal: "Olof Lövdén", activity: "Idrott"},
-    {personal: "Donovan Payan", activity: "Koda"},
+    {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra", activity: "Slöjd"},
     {personal: "Yvonne", activity: "Promenad"},
     {personal: "Ersika", activity: "Switch"},
@@ -589,7 +633,8 @@ const personalOptions = [
   "Matthias Petersson",
   "Lisa Tradefelt",
   "Yvonne Grahn",
-"Donovan Payan" ]
+  "Donovan Payan",
+  "Alex Fatehnia" ];
 
 
 
@@ -625,9 +670,10 @@ const img =[
   {fotboll: "fotboll.gif"},
   {sola: "sola.gif"},
   {kortspel: "kortspel.gif"},
-  {innebandy: "innebandy.png"}
+  {innebandy: "innebandy.png"},
+  {switch: "switch.png"}
 
-]
+];
 
 let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
 
@@ -731,7 +777,7 @@ function ActivitiesDisplay(){
       newDiv.setAttribute("class", "box");
       i++;
       let img = getImageForActivity(person.activity.toLowerCase());
-      console.log(img)
+     
       newDiv.innerHTML += 
       `<h2>Aktivitet ${i}</h2>
       <div class="activity_name">${person.activity}</div>
@@ -748,9 +794,6 @@ function ActivitiesDisplay(){
 
 //end of the pause
 
-if(time){
-
-}
 
 buttonStart.addEventListener("click", ()=>{
   settingDisplay.style.display = "none";
@@ -787,7 +830,22 @@ let tvspel =[
   "Sweet Day",
   "Wii u Party",
   "Wii Sports Resorts",
-  "Elevval"
+  
 ];
 
 
+
+function alarm(tid){
+  if(dayPåSvenska == Måndag)
+    if(tid == "11:00:00"){
+
+    }else if(dayPåSvenska == onsdag){
+    if(tid=="10:40:00"){
+
+    }
+  }else{
+    if(tid == "10:45:00"){
+
+    }
+  }
+}
