@@ -531,8 +531,8 @@ if(lunchButton){
 
   // Check if the input is not empty
   if (lunch !== "") {
-     lunchList.innerHTML = `${lunch}`;
-     lunchDisplay.innerHTML = `${lunch}`;
+     lunchList.innerHTML = `Huvudrätt: ${lunch}`;
+     lunchDisplay.innerHTML = `Vegetarisk: ${lunch}`;
   }else{
     console.log("Skriv lunchen")
   }
@@ -591,8 +591,8 @@ const activitiesObj = [
   {tisdag:[
     {personal: "Seidi Can", activity: "Spel"},
     {personal: "Donovan Payan", activity: "Switch"},
-    {personal: "Yvonne Grahn", activity: "Promenad"},
-    {personal: "Ersika", activity: ""},
+    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
+    {personal: "Ersika Simba", activity: ""},
   ]},
   {onsdag:[
     {personal: "Matthias Petersson", activity: "Pingis"},
@@ -671,7 +671,8 @@ const img =[
   {sola: "sola.gif"},
   {kortspel: "kortspel.gif"},
   {innebandy: "innebandy.png"},
-  {switch: "switch.png"}
+  {switch: "switch.png"},
+  {supermariowonder: "supermariowonder.gif"}
 
 ];
 
@@ -782,7 +783,7 @@ function ActivitiesDisplay(){
       `<h2>Aktivitet ${i}</h2>
       <div class="activity_name">${person.activity}</div>
       <img class="img_activity" src="./asset/activity_img/${img}"/>
-      <div>med ${person.personal}</div>`
+      <div class="personalName">med ${person.personal}</div>`
       p.appendChild(newDiv);
     })
 
@@ -834,18 +835,3 @@ let tvspel =[
 ];
 
 
-
-function alarm(tid){
-  if(dayPåSvenska == Måndag)
-    if(tid == "11:00:00"){
-
-    }else if(dayPåSvenska == onsdag){
-    if(tid=="10:40:00"){
-
-    }
-  }else{
-    if(tid == "10:45:00"){
-
-    }
-  }
-}
