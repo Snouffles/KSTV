@@ -173,13 +173,19 @@ html{
 
 }
 .activity_name{
-    font-size: 20vh;
+    white-space: nowrap;          /* Prevent text from wrapping */
+    overflow: hidden;             /* Hide the overflow if text is too long */
+    text-overflow: ellipsis;      /* Add an ellipsis ("...") if the text is cut off */
+    font-size: calc(20px + 1vw);  /* Dynamically adjust the font size based on viewport width */
+    width: 100%;                  /* Ensure the text takes up the full width of its container */
+    display: block; 
+    margin-top: 50px;
 }
 .img_activity{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30vh;
+    width: 40vh;
     border-radius: 30px;
     
 }
@@ -193,5 +199,5 @@ html{
     bottom: 0; /* Align to the bottom of the container/viewport */
     left: 50%; /* Move the element to the center horizontally */
     transform: translateX(-50%); /* Correct the positioning by moving it back by 50% of its own width */
-    font-size: 6vh;
+    font-size: 5vh;
 }

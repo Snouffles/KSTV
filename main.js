@@ -238,14 +238,6 @@ if(vecka){
 
 }
 
-
-
-
-
-
-
-
-
 //list of personnal working at kunslapsskolan 2024
 let personalList= [ {
   "firstName": "Lisa","familyName":"Norming","photo": "",
@@ -605,9 +597,9 @@ const activitiesObj = [
   {torsdag:[
     {personal: "Olof Lövdén", activity: "Idrott"},
     {personal: "Donovan Payan", activity: "Fotboll"},
-    {personal: "Sandra", activity: "Slöjd"},
-    {personal: "Yvonne", activity: "Promenad"},
-    {personal: "Ersika", activity: "Switch"},
+    {personal: "Sandra Hiredal", activity: "Slöjd"},
+    {personal: "Yvonne Grahn", activity: "Promenad"},
+    {personal: "Ersika Simba", activity: "Switch"},
   ]},
   {fredag:[
     {personal: "Viktor Elander", activity: "Quiz"},
@@ -654,7 +646,35 @@ const activityOptions =
   "Kortspel", 
   "Sola", 
   "Hundpromenad", 
-  "Innebandy"];
+  "Innebandy",
+  "Mario Kart 8 Deluxe",
+  "Super Mario Party",
+  "Mario Party Superstars",
+  "Super Mario Bros. Wonder",
+  "Super Smash Bros. Ultimate",
+  "Overcooked",
+  "Plate Up",
+  "Moving Out 2",
+  "Tricky Towers",
+  "Pocket Mini Golf",
+  "Gang Beasts",
+  "Stick Fight The Game",
+  "Ring Fit Aventure",
+  "Bread & Fred",
+  "Biped",
+  "Keep Talking And Nobody Explodes",
+  "Mario Party 10",
+  "Sweet Day",
+  "Mario Chase",
+  "Luigi's Ghost Mansion",
+  "Battle Quest",
+  "Wii Party U",
+  "Wii Party",
+  "Wii Sports Resort",
+  "Super Marion 3D World",
+  "Mario and Sonic at the London Olympic Games",
+  "Metroid Blast"
+];
 const img =[
   {basket: "basket.gif"},
   {badminton: "badminton.gif"},
@@ -672,8 +692,31 @@ const img =[
   {kortspel: "kortspel.gif"},
   {innebandy: "innebandy.png"},
   {switch: "switch.png"},
-  {supermariowonder: "supermariowonder.gif"}
-
+  {supermariobroswonder: "supermariobroswonder.gif"},
+  {supermarioparty: "supermarioparty.gif"},
+  {mariopartysuperstars:"mariopartysuperstars.gif"},
+  {supersmashbrosultimate:"supersmashbrosultimate.gif"},
+  {overcooked:"overcooked.gif"},
+  {plateup:"plateup.gif"},
+  {movingout2:"movingout2.gif"},
+  {trickytowers:"trickytower.gif"},
+  {pocketminigolf:"pocketminigolf.avif"},
+  {stickfightthegame:"stickfightthegame.gif"},
+  {ringfitadventure:"ringfitadventure.gif"},
+  {breadfred:"breadfred.gif"},
+  {biped:"biped.gif"},
+  {keeptalkingandnobodyexplodes:"keeptalkingandnobodyexplodes.gif"},
+  {marioparty10:"marioparty10.gif"},
+  {sweetday:"sweetday.jpg"},
+  {mariochase:"mariochase.gif"},
+  {luigisghostmansion:"luigisghostmansion.gif"},
+  {battlequest:"battlequest.gif"},
+  {wiipartyu:"wiipartyu.gif"},
+  {wiiparty:"wiiparty.gif"},
+  {wiisportsresort:"wiisportresorst.gif"},
+  {supermario3dworld:"supermario3dworld"},
+  {marioandsonicathelondonolympicgame:"supermario3dworld.gif"},
+  {metroidblast:"metroidblast.gif"}
 ];
 
 let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
@@ -763,12 +806,14 @@ document.getElementById("addActivityBtn").addEventListener("click", function() {
 // Initial rendering of activities for the day
 renderActivities();
 function getImageForActivity(activity) {
-  const imageObj = img.find(image => image[activity.toLowerCase()]);
-  return imageObj ? imageObj[activity.toLowerCase()] : null;
+  let activityCleaned = activity.replace(/[ .'&]/g, '');
+  const imageObj = img.find(image => image[activityCleaned.toLowerCase()]);
+  console.log(imageObj);
+  return imageObj  ? imageObj [activityCleaned.toLowerCase()] : null;
 }
 
 function ActivitiesDisplay(){
-  console.log(activitiesOfTheDay)
+ 
   p = document.getElementById("box_activity");
   p.innerHTML ="";
   if(activitiesOfTheDay.length != 0){
@@ -778,7 +823,7 @@ function ActivitiesDisplay(){
       newDiv.setAttribute("class", "box");
       i++;
       let img = getImageForActivity(person.activity.toLowerCase());
-     
+      console.log(img);
       newDiv.innerHTML += 
       `<h2>Aktivitet ${i}</h2>
       <div class="activity_name">${person.activity}</div>
@@ -818,20 +863,5 @@ buttonStart.addEventListener("click", ()=>{
   // Initially show the first box
   showBox(currentIndex);
 }); 
-
-
-
-let tvspel =[
-  "Gang Beasts",
-  "Super Mario Bros Wonder",
-  "Mario Chase",
-  "Battle Quest",
-  "Metroid Blast",
-  "Luigi's Ghost Mansion",
-  "Sweet Day",
-  "Wii u Party",
-  "Wii Sports Resorts",
-  
-];
 
 
