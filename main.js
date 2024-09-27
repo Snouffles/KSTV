@@ -519,12 +519,12 @@ if(lunchButton){
  // Add event listener to the button
  lunchButton.addEventListener("click", function() {
   // Get the value from the input field
-  let lunch = `${lunchInput.value}<br>${lunchInputVeg.value}`; 
+  let lunch = `Huvudrätt: ${lunchInput.value}<br>Vegetariskt: ${lunchInputVeg.value}`; 
 
   // Check if the input is not empty
   if (lunch !== "") {
-     lunchList.innerHTML = `Huvudrätt: ${lunch}`;
-     lunchDisplay.innerHTML = `Vegetarisk: ${lunch}`;
+     lunchList.innerHTML = `${lunch}`;
+     lunchDisplay.innerHTML = `${lunch}`;
   }else{
     console.log("Skriv lunchen")
   }
@@ -551,6 +551,7 @@ if(lunchButton){
     boxes.forEach(box=>{
       box.style.display = "none";
     })
+
     settingDisplay.style.display = "flex";
 
   })
