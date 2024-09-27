@@ -846,6 +846,8 @@ buttonStart.addEventListener("click", ()=>{
   box_1Display.style.display = "flex";
   getFrånvaro();
   ActivitiesDisplay();
+  goFullscreen();
+  requestWakeLock();
   const boxes = document.querySelectorAll('.box');
   let currentIndex = 0;
 
@@ -865,3 +867,27 @@ buttonStart.addEventListener("click", ()=>{
 }); 
 
 
+function goFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+// Variable to store the wake lock instance
+let wakeLock = null;
+
+// Function to request a wake lock
+async function requestWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    console.log('Wake Lock is active');
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+}
