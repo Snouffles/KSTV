@@ -520,7 +520,9 @@ if(lunchButton){
  lunchButton.addEventListener("click", function() {
   // Get the value from the input field
   let lunch = `Huvudrätt: ${lunchInput.value}<br>Vegetariskt: ${lunchInputVeg.value}`; 
-
+if(lunchInput.length > 20 || lunchInputVeg > 20){
+  lunchDisplay.style.fontSize = "6vh";
+}
   // Check if the input is not empty
   if (lunch !== "") {
      lunchList.innerHTML = `${lunch}`;
@@ -715,8 +717,8 @@ const img =[
   {wiipartyu:"wiipartyu.gif"},
   {wiiparty:"wiiparty.gif"},
   {wiisportsresort:"wiisportresorst.gif"},
-  {supermario3dworld:"supermario3dworld"},
-  {marioandsonicathelondonolympicgame:"supermario3dworld.gif"},
+  {supermario3dworld:"supermario3dworld.gif"},
+  {marioandsonicathelondonolympicgame:"marioandsonic.gif"},
   {metroidblast:"metroidblast.gif"}
 ];
 
@@ -827,10 +829,13 @@ function ActivitiesDisplay(){
       console.log(img);
       newDiv.innerHTML += 
       `<h2>Aktivitet ${i}</h2>
-      <div class="activity_name">${person.activity}</div>
+      <div class="activity_name" id="activityToLong${i}">${person.activity}</div>
       <img class="img_activity" src="./asset/activity_img/${img}"/>
       <div class="personalName">med ${person.personal}</div>`
       p.appendChild(newDiv);
+      if(person.activity.length > 15){
+        document.getElementById(`activityToLong${i}`).style.fontSize = "6vh";
+      }
     })
 
   }else{

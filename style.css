@@ -82,7 +82,7 @@ html{
     padding: 20vh 0 0 0;
     justify-content: center;
     align-items: center;
-    font-size: 10vh;
+    font-size: 7vh;
    
 }
 
@@ -93,7 +93,6 @@ html{
     justify-content: center;
     white-space: nowrap; /* Prevents text from breaking into multiple lines */
     overflow: hidden;    /* Hides overflowed text */
-    text-overflow: ellipsis; /* Adds '...' to indicate text overflow */
     max-width: 100%; 
 }
 
@@ -108,17 +107,18 @@ html{
     padding: 10vh 0 0 0;
     justify-content: center;
     align-items: center;
-    font-size: 15vh;
+    
 }
 
 #box_3 h2{
     margin-top: 50px;
-    font-size: 10vh;
+    font-size: 7vh;
     text-align: center; 
 }
 
 #box_3 #frånvaro_display{
     margin: 10vh 0 0 0;
+    font-size: 7vh;
 }
 
 #box_4{
@@ -176,16 +176,18 @@ html{
     white-space: nowrap;          /* Prevent text from wrapping */
     overflow: hidden;             /* Hide the overflow if text is too long */
     text-overflow: ellipsis;      /* Add an ellipsis ("...") if the text is cut off */
-    font-size: calc(20px + 1vw);  /* Dynamically adjust the font size based on viewport width */
+    font-size: calc(20px + 5vw);  /* Dynamically adjust the font size based on viewport width */
     width: 100%;                  /* Ensure the text takes up the full width of its container */
     display: block; 
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .img_activity{
     display: block;
+    object-fit:contain;
     margin-left: auto;
     margin-right: auto;
     width: 40vh;
+    height: 230px;
     border-radius: 30px;
     
 }
