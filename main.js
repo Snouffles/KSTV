@@ -120,14 +120,14 @@ function playAudio(time){
       displayPie.style.display = "none"
     }
   }else{
-    if(time == "10:30:00"){
+    if(time == "10:30:00" || time == "8:45:00"){
       displayPie.style.display = "grid";
       PieTimer.style.animation = "timer 900s forwards linear;"
     }
-    if(time == "10:45:00"){
+    if(time == "10:45:00" || "9:00:00"){
       audioMusic.play();
     }
-    if(time == "10:46:00"){
+    if(time == "10:46:00" || "9:01:00"){
       displayPie.style.display = "none"
     }
   }
