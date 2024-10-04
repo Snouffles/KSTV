@@ -45,3 +45,29 @@ html{
     font-size: 10vw;
 }
 
+#circle {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    margin: 50px auto;
+    transform-origin: center;
+  }
+  
+  .shrink {
+    animation: shrinkAnimation linear forwards;
+  }
+  
+  @keyframes shrinkAnimation {
+    0% {
+      width: 150px;
+      height: 150px;
+      opacity: 1;
+    }
+    100% {
+      width: 0px;
+      height: 0px;
+      opacity: 0;
+    }
+  }

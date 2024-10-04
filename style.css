@@ -203,3 +203,38 @@ html{
     transform: translateX(-50%); /* Correct the positioning by moving it back by 50% of its own width */
     font-size: 5vh;
 }
+
+
+
+@property --percentage {
+    initial-value: 100%;
+    inherits: false;
+    syntax: "<percentage>";
+  }
+  
+  .chart {
+    background: conic-gradient(red var(--percentage), white 0);
+    border-radius: 50%;
+    width: 13vmin;
+    height: 13vmin;
+    
+  }
+  
+  @keyframes timer {
+    to {
+      --percentage: 0%;
+    }
+  }
+  
+  .chart-container {
+    height: 10vh;
+    margin: 0;
+    display: none;
+    place-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    top:3%;
+    left: 15%;
+    
+  }
+  

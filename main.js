@@ -10,6 +10,9 @@ let timerSeconds = 10;
 let timerVideo = document.getElementById("timerVideo");
 let currentTime;
 let audioMusic = document.getElementById("backgroundMusic");
+let displayPie = document.getElementById("chart-container");
+let PieTimer = document.getElementById("chart");
+
 switch(day){
   case 1:
     dayPåSvenska = "Måndag";
@@ -74,26 +77,73 @@ document.addEventListener('DOMContentLoaded', () => {
   },1000)
 })
 function playAudio(time){
-  
+  if(dayPåSvenska != "Onsdag" || dayPåSvenska != "Fredag"){
+    if(time == "14:00:00"){
+      displayPie.style.display = "grid";
+      PieTimer.style.animation = "timer 300s forwards linear";
+    }
+    if(time == "13:52:45"){
+      displayPie.style.display = "grid";
+      PieTimer.style.animation = "timer 10s forwards linear";
+
+    }
+    if(time == "14:05:00"){
+      audioMusic.play();
+    }
+    if(time == "13:56:00"){
+      audioMusic.play();
+    }
+    if(time == "14:06:00"){
+      PieTimer.style.display = "none";
+    }
+  }
   if(dayPåSvenska == "Måndag"){
+    if(time == "10:45:00"){
+      displayPie.style.display = "grid";
+      PieTimer.style.animation = "timer 900s forwards linear;"
+    }
     if(time == "11:00:00"){
       audioMusic.play();
     }
+    if(time == "11:01:00"){
+      displayPie.style.display = "none"
+    }
   }else if(dayPåSvenska == "Onsdag"){
+    if(time = "10:20:00"){
+      displayPie.style.display = "grid";
+      PieTimer.style.animation = "timer 1200s forwards linear;"
+    }
     if(time =="10:40:00"){
       audioMusic.play();
     }
+    if(time == "10:41:00"){
+      displayPie.style.display = "none"
+    }
   }else{
+    if(time == "10:30:00"){
+      displayPie.style.display = "grid";
+      PieTimer.style.animation = "timer 900s forwards linear;"
+    }
     if(time == "10:45:00"){
       audioMusic.play();
+    }
+    if(time == "10:46:00"){
+      displayPie.style.display = "none"
     }
   }
   if(time == "12:50:00"){
     audioMusic.play();
   }
+  if(time == "12:55:00"){
+    displayPie.style.display = "none";
+  }
  
 }
 
+if(time === "11:55:00"){
+  displayPie.style.display = "grid";
+  PieTimer.style.animation = "timer 3300s normal linear;"
+}
 
 let cooldown = setInterval(function timer() {
   // Ensure timerMinute and timerSeconds are numbers
@@ -719,7 +769,8 @@ const img =[
   {wiisportsresort:"wiisportresorst.gif"},
   {supermario3dworld:"supermario3dworld.gif"},
   {marioandsonicathelondonolympicgame:"marioandsonic.gif"},
-  {metroidblast:"metroidblast.gif"}
+  {metroidblast:"metroidblast.gif"},
+  {gangbeasts: "gangbeast.gif"}
 ];
 
 let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
@@ -845,7 +896,6 @@ function ActivitiesDisplay(){
 
 
 //end of the pause
-
 
 buttonStart.addEventListener("click", ()=>{
   settingDisplay.style.display = "none";
