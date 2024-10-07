@@ -597,7 +597,7 @@ if(lunchInput.length > 20 || lunchInputVeg.length > 20){
         console.log(1);
         lunchList.innerHTML = `${lunch}`;
         const split1 = lunchInput.value.split(" ");
-        const firstPart = split1.slice(1,4).join(" ");
+        const firstPart = split1.slice(0,4).join(" ");
         const secondPart = split1.slice(4).join(" ");
         lunchDisplay.innerHTML += `Huvudrätt:<br>${firstPart}<br>${secondPart}`;
         lunchDisplayVeg.innerHTML = `Huvudrätt:<br>${lunchInputVeg.value}`;
@@ -606,10 +606,10 @@ if(lunchInput.length > 20 || lunchInputVeg.length > 20){
         console.log(2);
         lunchList.innerHTML = `${lunch}`;
         const split1 = lunchInput.value.split(" ");
-        const firstPart = split1.slice(1,4).join(" ");
+        const firstPart = split1.slice(0,4).join(" ");
         const secondPart = split1.slice(4).join(" ");
         const split1Veg = lunchInputVeg.value.split(" ");
-        const firstPartVeg = split1Veg.slice(1,4).join(" ");
+        const firstPartVeg = split1Veg.slice(0,4).join(" ");
         const secondPartVeg = split1Veg.slice(4).join(" ");
         lunchDisplay.innerHTML += `Huvudrätt:<br>${firstPart}<br>${secondPart}`;
         lunchDisplayVeg.innerHTML = `Vegetarisk:<br>${firstPartVeg}<br>${secondPartVeg}`;
@@ -620,7 +620,7 @@ if(lunchInput.length > 20 || lunchInputVeg.length > 20){
         console.log(3);
         lunchList.innerHTML = `${lunch}`;
         const split2 = lunchInput.value.split(" ");
-        const firstPart = split2.slice(1,4).join(" ");
+        const firstPart = split2.slice(0,4).join(" ");
         const secondPart = split2.slice(4).join(" ");
         lunchDisplay.innerHTML = `Huvudrätt:<br>${lunchInput.value}`;
         lunchDisplayVeg.innerHTML += `Vegetarisk:<br>${firstPart}<br>${secondPart}`;
