@@ -137,13 +137,24 @@ function playAudio(time){
   if(time == "12:55:00"){
     displayPie.style.display = "none";
   }
+  if(time === "11:55:00"){
+    displayPie.style.display = "grid";
+    PieTimer.style.animation = "timer 3300s forwards linear"
+  }
+  if(time == "9:00:00"){
+    audioMusic.play();
+  }
+  if(time == "9:01:00"){
+    displayPie.style.display = "none";
+  }
+  if(time === "8:40:00"){
+    displayPie.style.display = "grid";
+    PieTimer.style.animation = "timer 1200s forwards linear"
+  }
  
 }
 
-if(time === "11:55:00"){
-  displayPie.style.display = "grid";
-  PieTimer.style.animation = "timer 3300s normal linear;"
-}
+
 
 let cooldown = setInterval(function timer() {
   // Ensure timerMinute and timerSeconds are numbers
@@ -523,9 +534,12 @@ document.addEventListener('DOMContentLoaded', () => {
               if (checkBox) { // Ensure the element exists
                   checkBox.addEventListener("change", () => {
                       if (checkBox.checked) {
+                        if(frånvaroList){
                          frånvaroList.push({"firstName":person.firstName, "familyName":person.familyName});
                          document.getElementById("frånvaroList").innerHTML = ``;
                          console.log(frånvaroList);
+                        }
+                         
                          frånvaroList.forEach(frånvaro =>{
                           document.getElementById("frånvaroList").innerHTML += `<div>${frånvaro.firstName} ${frånvaro.familyName}`;
                          })
@@ -563,6 +577,7 @@ let lunchInputVeg = document.getElementById("lunchName_veg");
 let lunchButton = document.getElementById("lunchOk");
 let lunchList = document.getElementById("lunchList");
 let lunchDisplay = document.getElementById("lunchDisplay");
+let lunchDisplayVeg = document.getElementById("lunchDisplayVeg");
 let lunch = "";
 
 if(lunchButton){
@@ -570,13 +585,53 @@ if(lunchButton){
  lunchButton.addEventListener("click", function() {
   // Get the value from the input field
   let lunch = `Huvudrätt: ${lunchInput.value}<br>Vegetariskt: ${lunchInputVeg.value}`; 
-if(lunchInput.length > 20 || lunchInputVeg > 20){
+if(lunchInput.length > 20 || lunchInputVeg.length > 20){
   lunchDisplay.style.fontSize = "6vh";
 }
   // Check if the input is not empty
   if (lunch !== "") {
-     lunchList.innerHTML = `${lunch}`;
-     lunchDisplay.innerHTML = `${lunch}`;
+    let veg = lunchInputVeg.value;
+    let huvud = lunchInput.value
+
+      if(huvud.length > 25 && veg.length <=25){
+        console.log(1);
+        lunchList.innerHTML = `${lunch}`;
+        const split1 = lunchInput.value.split(" ");
+        const firstPart = split1.slice(1,4).join(" ");
+        const secondPart = split1.slice(4).join(" ");
+        lunchDisplay.innerHTML += `Huvudrätt:<br>${firstPart}<br>${secondPart}`;
+        lunchDisplayVeg.innerHTML = `Huvudrätt:<br>${lunchInputVeg.value}`;
+      }
+      if(huvud.length > 25 && veg.length >25){
+        console.log(2);
+        lunchList.innerHTML = `${lunch}`;
+        const split1 = lunchInput.value.split(" ");
+        const firstPart = split1.slice(1,4).join(" ");
+        const secondPart = split1.slice(4).join(" ");
+        const split1Veg = lunchInputVeg.value.split(" ");
+        const firstPartVeg = split1Veg.slice(1,4).join(" ");
+        const secondPartVeg = split1Veg.slice(4).join(" ");
+        lunchDisplay.innerHTML += `Huvudrätt:<br>${firstPart}<br>${secondPart}`;
+        lunchDisplayVeg.innerHTML = `Vegetarisk:<br>${firstPartVeg}<br>${secondPartVeg}`;
+      }
+
+
+      if(veg.length >25 && huvud.length <=25){
+        console.log(3);
+        lunchList.innerHTML = `${lunch}`;
+        const split2 = lunchInput.value.split(" ");
+        const firstPart = split2.slice(1,4).join(" ");
+        const secondPart = split2.slice(4).join(" ");
+        lunchDisplay.innerHTML = `Huvudrätt:<br>${lunchInput.value}`;
+        lunchDisplayVeg.innerHTML += `Vegetarisk:<br>${firstPart}<br>${secondPart}`;
+      }
+      if(veg.length <=25 && huvud.length <=25){
+        console.log(4);
+        lunchList.innerHTML = `${lunch}`;
+        lunchDisplay.innerHTML = `Huvudrätt:<br>${lunchInput.value}`;
+        lunchDisplayVeg.innerHTML = `Vegetarisk:<br> ${lunchInputVeg.value}`;
+      }
+     
   }else{
     console.log("Skriv lunchen")
   }
@@ -599,12 +654,15 @@ if(lunchInput.length > 20 || lunchInputVeg > 20){
   let backToSettings = document.getElementById("backToSettings");
 
   backToSettings.addEventListener("click", ()=>{
+   
     clearInterval(displayTimer);
     boxes.forEach(box=>{
       box.style.display = "none";
     })
-
     settingDisplay.style.display = "flex";
+ 
+  
+  
 
   })
 
@@ -651,7 +709,6 @@ const activitiesObj = [
     {personal: "Olof Lövdén", activity: "Idrott"},
     {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
-    {personal: "Yvonne Grahn", activity: "Promenad"},
     {personal: "Ersika Simba", activity: "Switch"},
   ]},
   {fredag:[
@@ -916,7 +973,7 @@ buttonStart.addEventListener("click", ()=>{
   displayTimer = setInterval(() => {
       showBox(currentIndex); // Show the current box
       currentIndex = (currentIndex + 1) % boxes.length; // Move to the next box, looping back to the start
-  }, 10000); 
+  }, 6000); 
 
   // Initially show the first box
   showBox(currentIndex);
