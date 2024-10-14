@@ -82,19 +82,14 @@ function playAudio(time){
       displayPie.style.display = "grid";
       PieTimer.style.animation = "timer 300s forwards linear";
     }
-    if(time == "13:52:45"){
-      displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 10s forwards linear";
-
-    }
+    
     if(time == "14:05:00"){
       audioMusic.play();
     }
-    if(time == "13:56:00"){
-      audioMusic.play();
-    }
+   
     if(time == "14:06:00"){
       PieTimer.style.display = "none";
+      audioMusic.pause();
     }
   }
   if(dayPåSvenska == "Måndag"){
@@ -781,7 +776,7 @@ const activityOptions =
   "Wii Party U",
   "Wii Party",
   "Wii Sports Resort",
-  "Super Marion 3D World",
+  "Super Mario 3D World",
   "Mario and Sonic at the London Olympic Games",
   "Metroid Blast"
 ];
