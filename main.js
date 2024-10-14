@@ -95,7 +95,7 @@ function playAudio(time){
   if(dayPåSvenska == "Måndag"){
     if(time == "10:45:00"){
       displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 900s forwards linear;"
+      PieTimer.style.animation = "timer 900s forwards linear"
     }
     if(time == "11:00:00"){
       audioMusic.play();
@@ -106,7 +106,7 @@ function playAudio(time){
   }else if(dayPåSvenska == "Onsdag"){
     if(time = "10:20:00"){
       displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 1200s forwards linear;"
+      PieTimer.style.animation = "timer 1200s forwards linear"
     }
     if(time =="10:40:00"){
       audioMusic.play();
@@ -117,7 +117,7 @@ function playAudio(time){
   }else{
     if(time == "10:30:00" || time == "8:45:00"){
       displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 900s forwards linear;"
+      PieTimer.style.animation = "timer 900s forwards linear"
     }
     if(time == "10:45:00" || time == "9:00:00"){
       audioMusic.play();
