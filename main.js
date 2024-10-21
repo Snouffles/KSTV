@@ -89,7 +89,7 @@ function playAudio(time){
    
     if(time == "14:06:00"){
       PieTimer.style.display = "none";
-      audioMusic.pause();
+      audioMusic.stop();
     }
   }
   if(dayPåSvenska == "Måndag"){
@@ -101,7 +101,8 @@ function playAudio(time){
       audioMusic.play();
     }
     if(time == "11:01:00"){
-      displayPie.style.display = "none"
+      displayPie.style.display = "none";
+      audioMusic.stop();
     }
   }else if(dayPåSvenska == "Onsdag"){
     if(time = "10:20:00"){
@@ -112,7 +113,8 @@ function playAudio(time){
       audioMusic.play();
     }
     if(time == "10:41:00"){
-      displayPie.style.display = "none"
+      displayPie.style.display = "none";
+      audioMusic.stop();
     }
   }else{
     if(time == "10:30:00" || time == "8:45:00"){
@@ -123,14 +125,16 @@ function playAudio(time){
       audioMusic.play();
     }
     if(time == "10:46:00" || "9:01:00"){
-      displayPie.style.display = "none"
+      displayPie.style.display = "none";
+      audioMusic.stop();
     }
   }
   if(time == "12:50:00"){
     audioMusic.play();
   }
-  if(time == "12:55:00"){
+  if(time == "12:51:00"){
     displayPie.style.display = "none";
+    audioMusic.stop();
   }
   if(time === "11:55:00"){
     displayPie.style.display = "grid";
@@ -141,6 +145,7 @@ function playAudio(time){
   }
   if(time == "9:01:00"){
     displayPie.style.display = "none";
+    audioMusic.stop();
   }
   if(time === "8:40:00"){
     displayPie.style.display = "grid";
