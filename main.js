@@ -89,7 +89,8 @@ function playAudio(time){
    
     if(time == "14:06:00"){
       PieTimer.style.display = "none";
-      audioMusic.stop();
+      audioMusic.pause();
+      audioMusic.currentTime = 0;
     }
   }
   if(dayPåSvenska == "Måndag"){
@@ -102,7 +103,8 @@ function playAudio(time){
     }
     if(time == "11:01:00"){
       displayPie.style.display = "none";
-      audioMusic.stop();
+      audioMusic.pause();
+      audioMusic.currentTime = 0;
     }
   }else if(dayPåSvenska == "Onsdag"){
     if(time = "10:20:00"){
@@ -114,7 +116,8 @@ function playAudio(time){
     }
     if(time == "10:41:00"){
       displayPie.style.display = "none";
-      audioMusic.stop();
+      audioMusic.pause();
+      audioMusic.currentTime = 0;
     }
   }else{
     if(time == "10:30:00" || time == "8:45:00"){
@@ -126,7 +129,8 @@ function playAudio(time){
     }
     if(time == "10:46:00" || "9:01:00"){
       displayPie.style.display = "none";
-      audioMusic.stop();
+      audioMusic.pause();
+      audioMusic.currentTime = 0;
     }
   }
   if(time == "12:50:00"){
@@ -134,7 +138,8 @@ function playAudio(time){
   }
   if(time == "12:51:00"){
     displayPie.style.display = "none";
-    audioMusic.stop();
+    audioMusic.pause();
+    audioMusic.currentTime = 0;
   }
   if(time === "11:55:00"){
     displayPie.style.display = "grid";
@@ -145,7 +150,8 @@ function playAudio(time){
   }
   if(time == "9:01:00"){
     displayPie.style.display = "none";
-    audioMusic.stop();
+    audioMusic.pause();
+      audioMusic.currentTime = 0;
   }
   if(time === "8:40:00"){
     displayPie.style.display = "grid";
@@ -827,7 +833,8 @@ const img =[
   {supermario3dworld:"supermario3dworld.gif"},
   {marioandsonicathelondonolympicgame:"marioandsonic.gif"},
   {metroidblast:"metroidblast.gif"},
-  {gangbeasts: "gangbeast.gif"}
+  {gangbeasts: "gangbeast.gif"},
+  {mariokart8deluxe: "mariokart.gif"}
 ];
 
 let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
