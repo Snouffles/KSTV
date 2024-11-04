@@ -1,5 +1,3 @@
-
-//what day
 let date = new Date();
 let day = date.getDay();
 let dayPåSvenska ="";
@@ -76,63 +74,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   },1000)
 })
+
+function startAudio(){
+  audioMusic.play();
+  setTimeout(()=>{
+    audioMusic.pause();
+    audioMusic.currentTime = 0;
+  },30000)
+}
+function pieTimer(seconds){
+  console.log(seconds);
+  secondsToMilliseconds = seconds + 30 * 1000; //add 30 seconds to the milliseconds
+  console.log(secondsToMilliseconds);
+  displayPie.style.display ="grid";
+  PieTimer.style.animation = `timer ${seconds}s forwards linear`;
+  setTimeout(()=>{
+    displayPie.style.display="none";
+  },secondsToMilliseconds)
+}
+
+
+
 function playAudio(time){
+ 
   if(dayPåSvenska != "Onsdag" || dayPåSvenska != "Fredag"){
     if(time == "14:00:00"){
-      displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 300s forwards linear";
+      pieTimer(300);
     }
-    
     if(time == "14:05:00"){
-      audioMusic.play();
+      startAudio();
     }
-   
-    if(time == "14:06:00"){
-      PieTimer.style.display = "none";
-      audioMusic.pause();
-      audioMusic.currentTime = 0;
-    }
+ 
   }
   if(dayPåSvenska == "Måndag"){
     if(time == "10:45:00"){
-      displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 900s forwards linear"
+      pieTimer(900);
     }
     if(time == "11:00:00"){
-      audioMusic.play();
+      startAudio();
     }
-    if(time == "11:01:00"){
-      displayPie.style.display = "none";
-      audioMusic.pause();
-      audioMusic.currentTime = 0;
-    }
+   
   }else if(dayPåSvenska == "Onsdag"){
     if(time = "10:20:00"){
-      displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 1200s forwards linear"
+      pieTimer(1200);
     }
     if(time =="10:40:00"){
-      audioMusic.play();
+      startAudio();
     }
-    if(time == "10:41:00"){
-      displayPie.style.display = "none";
-      audioMusic.pause();
-      audioMusic.currentTime = 0;
-    }
-  }else{
+  }else if( dagPåSvenska =="Tisdag" || dagPåSvenska == "Torsdag"){
     if(time == "10:30:00" || time == "8:45:00"){
-      displayPie.style.display = "grid";
-      PieTimer.style.animation = "timer 900s forwards linear"
+      pieTimer(900);
     }
     if(time == "10:45:00" || time == "9:00:00"){
-      audioMusic.play();
-    }
-    if(time == "10:46:00" || "9:01:00"){
-      displayPie.style.display = "none";
-      audioMusic.pause();
-      audioMusic.currentTime = 0;
+      startAudio();
     }
   }
+  
   if(time == "12:50:00"){
     audioMusic.play();
   }
@@ -151,88 +148,14 @@ function playAudio(time){
   if(time == "9:01:00"){
     displayPie.style.display = "none";
     audioMusic.pause();
-      audioMusic.currentTime = 0;
+    audioMusic.currentTime = 0;
   }
   if(time === "8:40:00"){
     displayPie.style.display = "grid";
     PieTimer.style.animation = "timer 1200s forwards linear"
   }
- 
 }
 
-
-
-let cooldown = setInterval(function timer() {
-  // Ensure timerMinute and timerSeconds are numbers
-  timerMinute = parseInt(timerMinute);
-  timerSeconds = parseInt(timerSeconds);
-
-  // Add leading zeros
-  if (timerSeconds < 10) {
-      timerSeconds = "0" + timerSeconds;
-  }
-  if (timerMinute < 10 && timerMinute !== "0" + timerMinute) {
-      timerMinute = "0" + timerMinute;
-  }
-
-  // Update the timer display
-  let timerDisplay =  document.getElementById("timer");
-  if(timerDisplay){
-   timerDisplay.innerHTML = `${timerMinute}:${timerSeconds}`;
-
-  }
-
-  // Handle minute and second countdown logic
-  if (timerSeconds == 0) {
-      if (timerMinute > 0) {
-          timerMinute -= 1;
-          timerSeconds = 59;
-      } else {
-          timerSeconds = 0;
-      }
-  } else {
-      timerSeconds -= 1;
-  }
-
-  // Check if the timer has reached 00:00
-  if (timerMinute == 0 && timerSeconds == 0) {
-    let timerOver = document.getElementById("timer");
-    if(timerOver){
-      timerOver.innerHTML = "Over";
-      clearInterval(cooldown);
-    }  
-      
-      // Handle full screen and play video logic
-      if(timerVideo){
-
-        timerVideo.style.display = "flex";
-        if (timerVideo.requestFullscreen) {
-            timerVideo.requestFullscreen();
-        } else if (timerVideo.mozRequestFullScreen) { // Firefox
-            timerVideo.mozRequestFullScreen();
-        } else if (timerVideo.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-            timerVideo.webkitRequestFullscreen();
-        } else if (timerVideo.msRequestFullscreen) { // IE/Edge
-            timerVideo.msRequestFullscreen();
-        }
-        timerVideo.play();
-      }
-  }
-}, 1000);
-if(timerVideo){
-  
-  timerVideo.addEventListener('ended', function() {
-      this.style.display = 'none';
-      }
-  )
-}
-
-
-
-let audio = ("./Its Done. Its Over..mp3");
-let sound = new Audio(audio);
-
-  
 
 //get the month to swedish
 let monthPåSvenska;
@@ -569,6 +492,7 @@ function getFrånvaro(){
     frånvaroDisplay.innerHTML =`<div class="personal">Alla är på plats!</div>`
      
   }else{
+    frånvaroDisplay.innerHTML = "";
     frånvaroList.forEach( person =>{
     frånvaroDisplay.innerHTML +=`<div class="personal">${person.firstName} ${person.familyName}</div>`
     })
@@ -585,6 +509,17 @@ let lunchList = document.getElementById("lunchList");
 let lunchDisplay = document.getElementById("lunchDisplay");
 let lunchDisplayVeg = document.getElementById("lunchDisplayVeg");
 let lunch = "";
+
+function lunchEmpty(){
+  if(lunchList.innerHTML == ""){
+    alert("missing lunch");
+    setTimeout(()=>{
+      backToSetting();
+    }, 100)
+  }
+}
+
+
 
 if(lunchButton){
  // Add event listener to the button
@@ -653,24 +588,17 @@ if(lunchInput.length > 20 || lunchInputVeg.length > 20){
   let box_1Display = document.getElementById("box_1");
   let boxes = document.querySelectorAll(".box");
   let displayTimer = "";
-
-
-
-
   let backToSettings = document.getElementById("backToSettings");
 
-  backToSettings.addEventListener("click", ()=>{
-   
-    clearInterval(displayTimer);
-    boxes.forEach(box=>{
-      box.style.display = "none";
-    })
-    settingDisplay.style.display = "flex";
- 
-  
-  
-
+  function backToSetting(){
+  clearInterval(displayTimer);
+  boxes.forEach(box=>{
+    box.style.display = "none";
   })
+  settingDisplay.style.display = "flex";
+}
+
+backToSettings.addEventListener("click", backToSetting);
 
 let timeoutId;
 
@@ -962,8 +890,10 @@ function ActivitiesDisplay(){
 //end of the pause
 
 buttonStart.addEventListener("click", ()=>{
+ 
+ 
   settingDisplay.style.display = "none";
-  box_1Display.style.display = "flex";
+  lunchEmpty();
   getFrånvaro();
   ActivitiesDisplay();
   goFullscreen();
