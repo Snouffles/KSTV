@@ -118,15 +118,18 @@ function playAudio(time){
     if(time == "11:00:00"){
       startAudio();
     }
+  }
    
-  }else if(dayPåSvenska == "Onsdag"){
+  if(dayPåSvenska == "Onsdag"){
     if(time = "10:20:00"){
       pieTimer(1200);
     }
     if(time =="10:40:00"){
       startAudio();
     }
-  }else if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
+
+  }
+  if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
     if(time == "10:30:00" || time == "8:45:00"){
       pieTimer(900);
     }
@@ -145,10 +148,14 @@ function playAudio(time){
   if(time == "9:00:00"){
     startAudio();
   }
- 
+  if(time == "13:11:00"){
+    startAudio();
+  }
+  
   if(time === "8:40:00"){
     pieTimer(1200);
   }
+  
 }
 
 
