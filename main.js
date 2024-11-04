@@ -11,6 +11,7 @@ let audioMusic = document.getElementById("backgroundMusic");
 let displayPie = document.getElementById("chart-container");
 let PieTimer = document.getElementById("chart");
 
+
 switch(day){
   case 1:
     dayPåSvenska = "Måndag";
@@ -86,7 +87,7 @@ function pieTimer(seconds){
   console.log(seconds);
   secondsToMilliseconds = seconds + 30 * 1000; //add 30 seconds to the milliseconds
   console.log(secondsToMilliseconds);
-  displayPie.style.display ="grid";
+  displayPie.style.display = "grid";
   PieTimer.style.animation = `timer ${seconds}s forwards linear`;
   setTimeout(()=>{
     displayPie.style.display="none";
@@ -110,6 +111,10 @@ function playAudio(time){
     if(time == "10:45:00"){
       pieTimer(900);
     }
+    if(time == "11:31:40"){
+      pieTimer(10);
+      startAudio();
+    }
     if(time == "11:00:00"){
       startAudio();
     }
@@ -121,7 +126,7 @@ function playAudio(time){
     if(time =="10:40:00"){
       startAudio();
     }
-  }else if( dagPåSvenska =="Tisdag" || dagPåSvenska == "Torsdag"){
+  }else if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
     if(time == "10:30:00" || time == "8:45:00"){
       pieTimer(900);
     }
@@ -131,28 +136,18 @@ function playAudio(time){
   }
   
   if(time == "12:50:00"){
-    audioMusic.play();
+    startAudio();
   }
-  if(time == "12:51:00"){
-    displayPie.style.display = "none";
-    audioMusic.pause();
-    audioMusic.currentTime = 0;
-  }
+ 
   if(time === "11:55:00"){
-    displayPie.style.display = "grid";
-    PieTimer.style.animation = "timer 3300s forwards linear"
+    pieTimer(3300);
   }
   if(time == "9:00:00"){
-    audioMusic.play();
+    startAudio();
   }
-  if(time == "9:01:00"){
-    displayPie.style.display = "none";
-    audioMusic.pause();
-    audioMusic.currentTime = 0;
-  }
+ 
   if(time === "8:40:00"){
-    displayPie.style.display = "grid";
-    PieTimer.style.animation = "timer 1200s forwards linear"
+    pieTimer(1200);
   }
 }
 
