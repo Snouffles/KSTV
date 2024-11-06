@@ -84,9 +84,8 @@ function startAudio(){
   },30000)
 }
 function pieTimer(seconds){
-  console.log(seconds);
+  
   secondsToMilliseconds = seconds + 30 * 1000; //add 30 seconds to the milliseconds
-  console.log(secondsToMilliseconds);
   displayPie.style.display = "grid";
   PieTimer.style.animation = `timer ${seconds}s forwards linear`;
   setTimeout(()=>{
@@ -111,24 +110,24 @@ function playAudio(time){
     if(time == "10:45:00"){
       pieTimer(900);
     }
-    if(time == "11:31:40"){
-      pieTimer(10);
-      startAudio();
-    }
     if(time == "11:00:00"){
       startAudio();
     }
   }
    
   if(dayPåSvenska == "Onsdag"){
-    if(time = "10:20:00"){
+   
+    if(time =="11:07:00"){
+      pieTimer(10);
+    }
+    if(time =="10:20:00"){
       pieTimer(1200);
     }
     if(time =="10:40:00"){
       startAudio();
     }
-
   }
+  
   if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
     if(time == "10:30:00" || time == "8:45:00"){
       pieTimer(900);
@@ -148,9 +147,7 @@ function playAudio(time){
   if(time == "9:00:00"){
     startAudio();
   }
-  if(time == "13:11:00"){
-    startAudio();
-  }
+ 
   
   if(time === "8:40:00"){
     pieTimer(1200);
@@ -623,8 +620,8 @@ document.addEventListener('mouseover', () => {
 const activitiesObj = [
   {måndag:[
     {personal: "Roni Ali", activity: "Basket"},
-    {personal: "Donovan Payan", activity: "Badminton"},
-    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Donovan Payan", activity: "Spel"},
+    {personal: "Ersika Simba", activity: "Gang Beast"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {tisdag:[
