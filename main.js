@@ -11,6 +11,32 @@ let audioMusic = document.getElementById("backgroundMusic");
 let displayPie = document.getElementById("chart-container");
 let PieTimer = document.getElementById("chart");
 
+switch(day){
+  case 1:
+    dayPåSvenska = "Måndag";
+  break;
+  case 2:
+    dayPåSvenska = "Tisdag";
+  break;
+  case 3:
+    dayPåSvenska = "Onsdag";
+  break;
+  case 4:
+    dayPåSvenska = "Torsdag";
+  break;
+  case 5:
+    dayPåSvenska = "Fredag";
+  break;
+  case 6:
+    dayPåSvenska = "Lördag";
+  break;
+  case 7:
+    dayPåSvenska = "Söndag";
+  break;
+  default:
+   
+  
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -362,13 +388,13 @@ let personalList= [ {
   "fredag":true
 },
 {
-  "firstName": "Julieta",
-  "familyName":"Cederlöf",
+  "firstName": "Alex",
+  "familyName":"Fatehnia",
   "photo": "",
-  "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag": false, 
+  "present": false,
+  "måndag": false,
+  "tisdag":false,
+  "onsdag":true, 
   "torsdag":true,
   "fredag":true
 }];
