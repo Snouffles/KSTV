@@ -12,47 +12,6 @@ let displayPie = document.getElementById("chart-container");
 let PieTimer = document.getElementById("chart");
 
 
-switch(day){
-  case 1:
-    dayPåSvenska = "Måndag";
-    lunchrast = {start: 1155, end: 1250};
-    morgonrast = {start: 1045, end: 1100};
-    workshoprast= {start:1400, end: 1405}
-  break;
-  case 2:
-    dayPåSvenska = "Tisdag";
-    lunchrast = {start: 1155, end: 1250}
-    morgonrast = {start: 1155, end: 1250};
-    workshoprast= {start:1400, end: 1405}
-  break;
-  case 3:
-    dayPåSvenska = "Onsdag";
-    lunchrast = {start: 1210, end: 1250}
-    morgonrast = {start: 1155, end: 1250};
-    workshoprast= {start:1400, end: 1405}
-  break;
-  case 4:
-    dayPåSvenska = "Torsdag";
-    lunchrast = {start: 1155, end: 1250}
-    morgonrast = {start: 1155, end: 1250};
-    workshoprast= {start:1400, end: 1405}
-  break;
-  case 5:
-    dayPåSvenska = "Fredag";
-    lunchrast = {start: 1155, end: 1250}
-    morgonrast = {start: 1155, end: 1250};
-    workshoprast= {start:1400, end: 1405} 
-  break;
-  case 6:
-    dayPåSvenska = "Lördag";
-  break;
-  case 7:
-    dayPåSvenska = "Söndag";
-  break;
-  default:
-   
-  
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(function time(){
@@ -97,7 +56,7 @@ function pieTimer(seconds){
 
 function playAudio(time){
  
-  if(dayPåSvenska != "Onsdag" || dayPåSvenska != "Fredag"){
+  if(dayPåSvenska == "Måndag" || dayPåSvenska == "Tisdag" || dayPåSvenska == "Torsdag"){
     if(time == "14:00:00"){
       pieTimer(300);
     }
@@ -403,13 +362,13 @@ let personalList= [ {
   "fredag":true
 },
 {
-  "firstName": "Alex",
-  "familyName":"Fatehnia",
+  "firstName": "Julieta",
+  "familyName":"Cederlöf",
   "photo": "",
-  "present": false,
-  "måndag": false,
-  "tisdag":false,
-  "onsdag":true, 
+  "present": true,
+  "måndag": true,
+  "tisdag":true,
+  "onsdag": false, 
   "torsdag":true,
   "fredag":true
 }];
@@ -617,7 +576,7 @@ document.addEventListener('mouseover', () => {
 
 const activitiesObj = [
   {måndag:[
-    {personal: "Roni Ali", activity: "Basket"},
+    {personal: "Roni Ali", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Spel"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
@@ -637,7 +596,7 @@ const activitiesObj = [
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {torsdag:[
-    {personal: "Olof Lövdén", activity: "Idrott"},
+    {personal: "Olof Lövdén", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
