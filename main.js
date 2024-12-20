@@ -222,8 +222,8 @@ let personalList= [ {
  
 },
 {
-  "firstName": "Göran",
-  "familyName":"Christersson.Mahlin",
+  "firstName": "Lotta",
+  "familyName":"Paulsen",
   "photo": "",
   "present": true,
   "måndag": true,
@@ -237,12 +237,12 @@ let personalList= [ {
   "firstName": "Olof",
   "familyName":"Lövdén",
   "photo": "",
-  "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag":true, 
-  "torsdag":true,
-  "fredag":true
+  "present": false,
+  "måndag": false,
+  "tisdag": false,
+  "onsdag": false, 
+  "torsdag": false,
+  "fredag": false
 },
 {
   "firstName": "Donovan",
@@ -260,10 +260,10 @@ let personalList= [ {
   "familyName":"Strandberg",
   "photo": "",
   "present": true,
-  "måndag": false,
+  "måndag": true,
   "tisdag":true,
-  "onsdag":true, 
-  "torsdag":true,
+  "onsdag":false, 
+  "torsdag":false,
   "fredag":true
 },
 {
@@ -322,6 +322,17 @@ let personalList= [ {
   "fredag":false
 },
 {
+  "firstName": "Karin",
+  "familyName":"Augustsson",
+  "photo": "",
+  "present": true,
+  "måndag": false,
+  "tisdag":false,
+  "onsdag":true, 
+  "torsdag":true,
+  "fredag":false
+},
+{
   "firstName": "Sandra",
   "familyName":"Hiredal",
   "photo": "",
@@ -344,14 +355,14 @@ let personalList= [ {
   "fredag":true
 },
 {
-  "firstName": "Stefan",
-  "familyName":"Schöning",
+  "firstName": "Peter",
+  "familyName":".",
   "photo": "",
   "present": true,
   "måndag": true,
-  "tisdag":false,
-  "onsdag":false, 
-  "torsdag":false,
+  "tisdag":true,
+  "onsdag":true, 
+  "torsdag":true,
   "fredag":true
 },
 {
@@ -388,13 +399,13 @@ let personalList= [ {
   "fredag":true
 },
 {
-  "firstName": "Alex",
-  "familyName":"Fatehnia",
+  "firstName": "Julieta",
+  "familyName":"Cederlöf",
   "photo": "",
-  "present": false,
-  "måndag": false,
-  "tisdag":false,
-  "onsdag":true, 
+  "present": true,
+  "måndag": true,
+  "tisdag":true,
+  "onsdag":false, 
   "torsdag":true,
   "fredag":true
 }];
@@ -507,7 +518,7 @@ if(lunchButton){
  // Add event listener to the button
  lunchButton.addEventListener("click", function() {
   // Get the value from the input field
-  let lunch = `Huvudrätt: ${lunchInput.value}<br>Vegetariskt: ${lunchInputVeg.value}`; 
+  let lunch = `Inte vegetariskt: ${lunchInput.value}<br>Vegetariskt: ${lunchInputVeg.value}`; 
 if(lunchInput.length > 20 || lunchInputVeg.length > 20){
   lunchDisplay.style.fontSize = "6vh";
 }
@@ -609,7 +620,7 @@ const activitiesObj = [
   ]},
   {tisdag:[
     {personal: "Seidi Can", activity: "Spel"},
-    {personal: "Donovan Payan", activity: "Gang Beast"},
+    {personal: "Donovan Payan", activity: "Gang Beasts"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
     {personal: "Ersika Simba", activity: ""},
   ]},
@@ -622,7 +633,7 @@ const activitiesObj = [
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {torsdag:[
-    {personal: "Olof Lövdén", activity: "Pingis"},
+    {personal: "Julieta", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
@@ -630,7 +641,7 @@ const activitiesObj = [
   {fredag:[
     {personal: "Viktor Elander", activity: "Quiz"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Göran Christersson.Mahlin", activity: "Spel"},
+    {personal: "Julieta", activity: "Spel"},
     {personal: "Lisa Norming", activity: "Promenad"},
   ]},
 ];
@@ -638,21 +649,22 @@ const activitiesObj = [
 const personalOptions = [
   "Roni Ali",
   "Seidi Can",
-  "Göran Christersson.Mahlin",
+  "Julieta Cederlöf",
   "Melina Do.Rosario",
   "Monia Dgachi",
   "Viktor Elander",
   "Sandra Hiredal",
   "Olof Lövdén",
   "Ersika Simba",
-  "Stefan Schöning",
+  "Peter .",
   "Joel Strandberg",
   "Lisa Norming",
   "Matthias Petersson",
   "Lisa Tradefelt",
   "Yvonne Grahn",
   "Donovan Payan",
-  "Alex Fatehnia" ];
+  "Lotta Paulsen",
+  "Karin Augutsson"];
 
 
 
