@@ -82,7 +82,7 @@ function pieTimer(seconds){
 
 function playAudio(time){
  
-  if(dayPåSvenska == "Måndag" || dayPåSvenska == "Tisdag" || dayPåSvenska == "Torsdag"){
+  if(dayPåSvenska == "Måndag" || dayPåSvenska == "Onsdag" || dayPåSvenska == "Torsdag"){
     if(time == "14:00:00"){
       pieTimer(300);
     }
@@ -102,13 +102,13 @@ function playAudio(time){
    
   if(dayPåSvenska == "Onsdag"){
    
-   
     if(time =="10:20:00"){
       pieTimer(1200);
     }
     if(time =="10:39:30"){
       startAudio();
     }
+    
   }
   
   if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
