@@ -620,20 +620,19 @@ const activitiesObj = [
   ]},
   {tisdag:[
     {personal: "Seidi Can", activity: "Spel"},
-    {personal: "Donovan Payan", activity: "Gang Beasts"},
+    {personal: "Donovan Payan", activity: "Rita"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
-    {personal: "Ersika Simba", activity: ""},
+    {personal: "Ersika Simba", activity: "Switch"},
   ]},
   {onsdag:[
     {personal: "Matthias Petersson", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Rita"},
-    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Lisa Norming", activity: "Promenad"},
     {personal: "Joel Strandberg", activity: "Spel"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {torsdag:[
-    {personal: "Julieta", activity: "Pingis"},
+    {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
@@ -641,7 +640,7 @@ const activitiesObj = [
   {fredag:[
     {personal: "Viktor Elander", activity: "Quiz"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Julieta", activity: "Spel"},
+    {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Lisa Norming", activity: "Promenad"},
   ]},
 ];
@@ -656,7 +655,7 @@ const personalOptions = [
   "Sandra Hiredal",
   "Olof Lövdén",
   "Ersika Simba",
-  "Peter .",
+  "Peter Kosenvoima",
   "Joel Strandberg",
   "Lisa Norming",
   "Matthias Petersson",
@@ -711,7 +710,11 @@ const activityOptions =
   "Wii Sports Resort",
   "Super Mario 3D World",
   "Mario and Sonic at the London Olympic Games",
-  "Metroid Blast"
+  "Metroid Blast",
+  "Pummel Party",
+  "Move or Die Unleashed",
+  "Boomerang Fu",
+  "Runbow"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -756,7 +759,12 @@ const img =[
   {marioandsonicathelondonolympicgame:"marioandsonic.gif"},
   {metroidblast:"metroidblast.gif"},
   {gangbeasts: "gangbeast.gif"},
-  {mariokart8deluxe: "mariokart.gif"}
+  {mariokart8deluxe: "mariokart.gif"},
+  {pummelparty:"pummelparty.gif"},
+  {moveordieunleashed:"moveordie.jpeg"},
+  {boomerangfu:"boomerangfu.gif"},
+  {runbow:"runbow.jpg"},
+
 ];
 
 let activitiesOfTheDay = activitiesObj.find(day => day[dayPåSvenska.toLowerCase()])[dayPåSvenska.toLowerCase()];
