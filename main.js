@@ -131,7 +131,6 @@ function playAudio(time){
     startAudio();
   }
  
-  
   if(time === "8:40:00"){
     pieTimer(1200);
   }
@@ -305,9 +304,9 @@ let personalList= [ {
   "photo": "",
   "present": true,
   "måndag": true,
-  "tisdag":false,
-  "onsdag":false, 
-  "torsdag":false,
+  "tisdag":true,
+  "onsdag":true, 
+  "torsdag":true,
   "fredag":false
 },
 {
@@ -356,7 +355,7 @@ let personalList= [ {
 },
 {
   "firstName": "Peter",
-  "familyName":".",
+  "familyName":"Kosenvoima",
   "photo": "",
   "present": true,
   "måndag": true,
@@ -628,7 +627,7 @@ const activitiesObj = [
     {personal: "Matthias Petersson", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Lisa Norming", activity: "Promenad"},
-    {personal: "Joel Strandberg", activity: "Spel"},
+    {personal: "Karin Augutsson", activity: "Spel"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
   ]},
   {torsdag:[
