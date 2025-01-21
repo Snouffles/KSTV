@@ -713,7 +713,8 @@ const activityOptions =
   "Pummel Party",
   "Move or Die Unleashed",
   "Boomerang Fu",
-  "Runbow"
+  "Runbow",
+  "Pico Park"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -763,6 +764,7 @@ const img =[
   {moveordieunleashed:"moveordie.jpeg"},
   {boomerangfu:"boomerangfu.gif"},
   {runbow:"runbow.jpg"},
+  {picopark: "picopark.gif"}
 
 ];
 
