@@ -111,7 +111,7 @@ function playAudio(time){
     
   }
   
-  if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag"){
+  if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Fredag" ){
     if(time == "10:30:00" || time == "8:45:00"){
       pieTimer(900);
     }
@@ -624,7 +624,7 @@ const activitiesObj = [
     {personal: "Ersika Simba", activity: "Switch"},
   ]},
   {onsdag:[
-    {personal: "Matthias Petersson", activity: "Pingis"},
+    {personal: "Mattias Petersson", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Lisa Norming", activity: "Promenad"},
     {personal: "Karin Augutsson", activity: "Spel"},
@@ -657,7 +657,7 @@ const personalOptions = [
   "Peter Kosenvoima",
   "Joel Strandberg",
   "Lisa Norming",
-  "Matthias Petersson",
+  "Mattias Petersson",
   "Lisa Tradefelt",
   "Yvonne Grahn",
   "Donovan Payan",
