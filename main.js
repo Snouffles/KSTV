@@ -616,6 +616,7 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Spel"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
+    {personal: "Lotta Paulsen", activity: "Rita"}
   ]},
   {tisdag:[
     {personal: "Seidi Can", activity: "Spel"},
@@ -635,6 +636,7 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Lotta Paulsen", activity: "Spel"}
   ]},
   {fredag:[
     {personal: "Viktor Elander", activity: "Quiz"},
