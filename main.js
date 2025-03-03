@@ -613,7 +613,7 @@ document.addEventListener('mouseover', () => {
 const activitiesObj = [
   {måndag:[
     {personal: "Roni Ali", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Spel"},
+    {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
     {personal: "Lotta Paulsen", activity: "Rita"}
@@ -716,7 +716,8 @@ const activityOptions =
   "Move or Die Unleashed",
   "Boomerang Fu",
   "Runbow",
-  "Pico Park"
+  "Pico Park",
+  "Pokemon Go"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -766,7 +767,8 @@ const img =[
   {moveordieunleashed:"moveordie.jpeg"},
   {boomerangfu:"boomerangfu.gif"},
   {runbow:"runbow.jpg"},
-  {picopark: "picopark.gif"}
+  {picopark: "picopark.gif"},
+  {pokemongo: "pokemongo.gif"}
 
 ];
 
