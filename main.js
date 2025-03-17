@@ -717,7 +717,8 @@ const activityOptions =
   "Boomerang Fu",
   "Runbow",
   "Pico Park",
-  "Pokemon Go"
+  "Pokemon Go",
+  "Among Us"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -768,7 +769,8 @@ const img =[
   {boomerangfu:"boomerangfu.gif"},
   {runbow:"runbow.jpg"},
   {picopark: "picopark.gif"},
-  {pokemongo: "pokemongo.gif"}
+  {pokemongo: "pokemongo.gif"},
+  {amongus: "amongus.gif"}
 
 ];
 
