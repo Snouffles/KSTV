@@ -626,7 +626,7 @@ const activitiesObj = [
   ]},
   {onsdag:[
     {personal: "Mattias Petersson", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Switch"},
+    {personal: "Donovan Payan", activity: "Among Us"},
     {personal: "Lisa Norming", activity: "Promenad"},
     {personal: "Karin Augutsson", activity: "Spel"},
     {personal: "Yvonne Grahn", activity: "Hundpromenad"},
