@@ -760,7 +760,7 @@ const img =[
   {wiiparty:"wiiparty.gif"},
   {wiisportsresort:"wiisportresorst.gif"},
   {supermario3dworld:"supermario3dworld.gif"},
-  {marioandsonicathelondonolympicgame:"marioandsonic.gif"},
+  {marioandsonicathelondonolympicgames:"marioandsonic.gif"},
   {metroidblast:"metroidblast.gif"},
   {gangbeasts: "gangbeast.gif"},
   {mariokart8deluxe: "mariokart.gif"},
