@@ -66,7 +66,7 @@ function startAudio(){
   setTimeout(()=>{
     audioMusic.pause();
     audioMusic.currentTime = 0;
-  },30000)
+  },43000)
 }
 function pieTimer(seconds){
   
