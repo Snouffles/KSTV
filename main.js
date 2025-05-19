@@ -69,7 +69,7 @@ function startAudio(){
     audioMusic.currentTime = 0;
   },43000)
 }
-startAudio();
+
 function pieTimer(seconds){
   
   secondsToMilliseconds = seconds + 30 * 1000; //add 30 seconds to the milliseconds
