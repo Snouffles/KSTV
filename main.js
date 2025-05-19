@@ -37,7 +37,7 @@ switch(day){
    
   
 }
-startAudio();
+
 
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(function time(){
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   },1000)
 })
-startAudio();
+
 function startAudio(){
   audioMusic.currentTime = 24;
   audioMusic.play();
@@ -69,6 +69,7 @@ function startAudio(){
     audioMusic.currentTime = 0;
   },43000)
 }
+startAudio();
 function pieTimer(seconds){
   
   secondsToMilliseconds = seconds + 30 * 1000; //add 30 seconds to the milliseconds
