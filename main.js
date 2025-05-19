@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   },1000)
 })
-
+startAudio();
 function startAudio(){
   audioMusic.currentTime = 24;
   audioMusic.play();
