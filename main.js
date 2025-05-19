@@ -37,7 +37,7 @@ switch(day){
    
   
 }
-
+startAudio();
 
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(function time(){
