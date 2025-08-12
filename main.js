@@ -84,51 +84,32 @@ function pieTimer(seconds){
 
 function playAudio(time){
  
-  if(dayPåSvenska == "Måndag" || dayPåSvenska == "Onsdag" || dayPåSvenska == "Torsdag"){
-    if(time == "14:00:00"){
-      pieTimer(300);
-    }
-    if(time == "14:04:30"){
-      startAudio();
-    }
- 
-  }
-  if(dayPåSvenska == "Måndag"){
-    if(time == "10:45:00"){
-      pieTimer(900);
-    }
-    if(time == "10:59:30"){
-      startAudio();
-    }
-  }
-   
   if(dayPåSvenska == "Onsdag"){
    
     if(time =="10:20:00"){
       pieTimer(1200);
     }
-    if(time =="10:39:30"){
+     if(time === "12:10:00"){
+      pieTimer(2400);
+    }
+    if(time =="10:39:30" || time =="12:49:30"){
       startAudio();
     }
     
   }
   
-  if( dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Fredag" ){
-    if(time == "10:30:00" || time == "8:45:00"){
+  if( dayPåSvenska =="Måndag" || dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Fredag" ){
+    if(time == "10:20:00" || time == "8:45:00"){
       pieTimer(900);
     }
-    if(time == "10:44:30" || time == "8:59:30"){
+     if(time === "11:55:00"){
+      pieTimer(3000);
+    }
+    if(time == "10:34:30" || time == "8:59:30" || time == "12:44:30"){
       startAudio();
     }
   }
-  
-  if(time == "12:49:30"){
-    startAudio();
-  }
- 
-  if(time === "11:55:00"){
-    pieTimer(3300);
-  }
+  //everyday of the week
   if(time == "8:59:30"){
     startAudio();
   }
@@ -235,15 +216,15 @@ let personalList= [ {
   
 },
 {
-  "firstName": "Olof",
-  "familyName":"Lövdén",
+  "firstName": "Celia",
+  "familyName":"Karlborg",
   "photo": "",
-  "present": false,
-  "måndag": false,
-  "tisdag": false,
-  "onsdag": false, 
-  "torsdag": false,
-  "fredag": false
+  "present": true,
+  "måndag": true,
+  "tisdag": true,
+  "onsdag": true, 
+  "torsdag": true,
+  "fredag": true
 },
 {
   "firstName": "Donovan",
@@ -261,10 +242,10 @@ let personalList= [ {
   "familyName":"Strandberg",
   "photo": "",
   "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag":false, 
-  "torsdag":false,
+  "måndag": false,
+  "tisdag": false,
+  "onsdag":true, 
+  "torsdag":true,
   "fredag":true
 },
 {
@@ -304,11 +285,11 @@ let personalList= [ {
   "firstName": "Melina",
   "familyName":"Do.Rosario",
   "photo": "",
-  "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag":true, 
-  "torsdag":true,
+  "present": false,
+  "måndag": false,
+  "tisdag":false,
+  "onsdag":false, 
+  "torsdag":false,
   "fredag":false
 },
 {
@@ -327,11 +308,11 @@ let personalList= [ {
   "familyName":"Augustsson",
   "photo": "",
   "present": true,
-  "måndag": false,
-  "tisdag":false,
+  "måndag": true,
+  "tisdag":true,
   "onsdag":true, 
-  "torsdag":true,
-  "fredag":false
+  "torsdag":false,
+  "fredag":true
 },
 {
   "firstName": "Sandra",
@@ -367,27 +348,17 @@ let personalList= [ {
   "fredag":true
 },
 {
-  "firstName": "Viktor",
-  "familyName":"Elander",
+  "firstName": "Jenny",
+  "familyName":"Hultquist",
   "photo": "",
   "present": true,
   "måndag": true,
   "tisdag":true,
   "onsdag":true, 
   "torsdag":true,
-  "fredag":true
+  "fredag":false
 },
-{
-  "firstName": "Yvonne",
-  "familyName":"Grahn",
-  "photo": "",
-  "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag":true, 
-  "torsdag":true,
-  "fredag":true
-},
+
 {
   "firstName": "Ersika",
   "familyName":"Simba",
@@ -406,7 +377,7 @@ let personalList= [ {
   "present": true,
   "måndag": true,
   "tisdag":true,
-  "onsdag":false, 
+  "onsdag":true, 
   "torsdag":true,
   "fredag":true
 }];
@@ -488,7 +459,9 @@ function getFrånvaro(){
   }else{
     frånvaroDisplay.innerHTML = "";
     frånvaroList.forEach( person =>{
-    frånvaroDisplay.innerHTML +=`<div class="personal">${person.firstName} ${person.familyName}</div>`
+    frånvaroDisplay.innerHTML +=
+    `<div class="personal">${person.firstName} ${person.familyName} 
+    <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}.webp></div>`
     })
   }
 }
