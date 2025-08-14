@@ -1,7 +1,7 @@
 *{margin:0}
 
 html{
-    background-color: rgb(21, 104, 117);
+    background-color: rgb(18, 95, 107);
     color: rgb(255, 255, 255);
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
@@ -107,7 +107,7 @@ html{
 }
 
 #box_3{
-    display: none;
+    display: block;
     padding: 10vh 0 0 0;
     justify-content: center;
     align-items: center;
@@ -121,10 +121,27 @@ html{
 }
 
 #box_3 #frånvaro_display{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
     margin: 10vh 0 0 0;
     font-size: 7vh;
 }
+#box_3 #frånvaro_display div{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
 
+.personalBild{
+    height: 15vh;
+    width: auto;
+    padding-left: 20px;
+}
 #box_4{
     display: none;
     padding: 10vh 0 0 0;

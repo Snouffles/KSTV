@@ -460,8 +460,8 @@ function getFrånvaro(){
     frånvaroDisplay.innerHTML = "";
     frånvaroList.forEach( person =>{
     frånvaroDisplay.innerHTML +=
-    `<div class="personal">${person.firstName} ${person.familyName} 
-    <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}.webp></div>`
+    `<div class="personal">${person.firstName} ${person.familyName} <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}.webp"> </div>
+   `
     })
   }
 }
