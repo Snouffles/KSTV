@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 0;
+  audioMusic.currentTime = 47;
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
-    audioMusic.currentTime = 0;
+    audioMusic.currentTime = 47;
   },43000)
 }
 
@@ -587,37 +587,39 @@ document.addEventListener('mouseover', () => {
 
 const activitiesObj = [
   {måndag:[
-    {personal: "Roni Ali", activity: "Pingis"},
+    {personal: "Karin Augustsson", activity: "Kortspel"},
     {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
+    {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Lotta Paulsen", activity: "Rita"}
   ]},
   {tisdag:[
-    {personal: "Seidi Can", activity: "Spel"},
-    {personal: "Donovan Payan", activity: "Rita"},
-    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
-    {personal: "Ersika Simba", activity: "Pico Park"},
+    {personal: "Roni Ali", activity: "Pingis"},
+    {personal: "Donovan Payan", activity: "Gang Beast"},
+    {personal: "Julieta Cederlöf", activity: "Rita"},
+    {personal: "Célia Karlborg", activity: "Kortspel"},
+    {Personal: "Lotta Paulsen", activity: "Bibliotek"}
   ]},
   {onsdag:[
     {personal: "Mattias Petersson", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Among Us"},
-    {personal: "Lisa Norming", activity: "Promenad"},
-    {personal: "Karin Augutsson", activity: "Spel"},
-    {personal: "Yvonne Grahn", activity: "Hundpromenad"},
+    {personal: "Roni Ali", activity: "Losthäst"},
+    {personal: "Donovan Payan", activity: "Rita"},
+    {personal: "Julieta Cederlöf", activity: "Spel"},
+    {personal: "Lotta Paulsen", activity: "Kortspel"},
   ]},
   {torsdag:[
     {personal: "Julieta Cederlöf", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Fotboll"},
+    {personal: "Donovan Payan", activity: "Kortspel"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Lotta Paulsen", activity: "Spel"}
   ]},
   {fredag:[
-    {personal: "Viktor Elander", activity: "Quiz"},
-    {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Julieta Cederlöf", activity: "Spel"},
+    {personal: "Lotta Paulsen", activity: "Quiz"},
+    {personal: "Donovan Payan", activity: "Switch"},
+    {personal: "Julieta Cederlöf", activity: "Bibliotek"},
     {personal: "Lisa Norming", activity: "Promenad"},
+    {personal: "Seidi Can", activity: "Kortspel"}
   ]},
 ];
 
