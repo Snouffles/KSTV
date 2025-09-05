@@ -460,7 +460,7 @@ function getFrånvaro(){
     frånvaroDisplay.innerHTML = "";
     frånvaroList.forEach( person =>{
     frånvaroDisplay.innerHTML +=
-    `<div class="personal">${person.firstName} ${person.familyName} <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}.webp"> </div>
+    `<div class="personal">${person.firstName} ${person.familyName} <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}2.jpg"> </div>
    `
     })
   }
@@ -853,6 +853,8 @@ function ActivitiesDisplay(){
     activitiesOfTheDay.forEach(person =>{
       newDiv = document.createElement("div");
       newDiv.setAttribute("class", "box");
+      let NoSpacePersonActivity = person.personal.replace(/\s+/g, '');
+      let personalBild = NoSpacePersonActivity + "1";
       i++;
       let img = getImageForActivity(person.activity.toLowerCase());
       console.log(img);
@@ -860,8 +862,11 @@ function ActivitiesDisplay(){
       `<h2>Aktivitet ${i}</h2>
       <div class="activity_name" id="activityToLong${i}">${person.activity}</div>
       <img class="img_activity" src="./asset/activity_img/${img}"/>
-      <div class="personalName">med ${person.personal}</div>`
+      <div class="personalName">med ${person.personal} <img class="personalBild" src="./asset/personnal_bilder/${NoSpacePersonActivity}1.jpg"> </div>`
+ console.log(NoSpacePersonActivity);
+      
       p.appendChild(newDiv);
+  
       if(person.activity.length > 15){
         document.getElementById(`activityToLong${i}`).style.fontSize = "6vh";
       }
