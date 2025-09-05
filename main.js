@@ -460,7 +460,7 @@ function getFrånvaro(){
     frånvaroDisplay.innerHTML = "";
     frånvaroList.forEach( person =>{
     frånvaroDisplay.innerHTML +=
-    `<div class="personal">${person.firstName} ${person.familyName} <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}2.jpg"> </div>
+    `<div class="personal">${person.firstName} ${person.familyName} <img class="personalBild" src="./asset/personnal_bilder/${person.firstName}${person.familyName}2.png"> </div>
    `
     })
   }
@@ -862,7 +862,7 @@ function ActivitiesDisplay(){
       `<h2>Aktivitet ${i}</h2>
       <div class="activity_name" id="activityToLong${i}">${person.activity}</div>
       <img class="img_activity" src="./asset/activity_img/${img}"/>
-      <div class="personalName">med ${person.personal} <img class="personalBild" src="./asset/personnal_bilder/${NoSpacePersonActivity}1.jpg"> </div>`
+      <div class="personalName">med ${person.personal} <img class="personalBild" src="./asset/personnal_bilder/${NoSpacePersonActivity}1.png"> </div>`
  console.log(NoSpacePersonActivity);
       
       p.appendChild(newDiv);
