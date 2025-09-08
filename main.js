@@ -863,7 +863,7 @@ function ActivitiesDisplay(){
       <div class="activity_name" id="activityToLong${i}">${person.activity}</div>
       <img class="img_activity" src="./asset/activity_img/${img}"/>
       <div class="personalName">med ${person.personal} <img class="personalBild" src="./asset/personnal_bilder/${NoSpacePersonActivity}1.png"> </div>`
- console.log(NoSpacePersonActivity);
+ 
       
       p.appendChild(newDiv);
   
