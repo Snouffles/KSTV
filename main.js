@@ -589,16 +589,18 @@ const activitiesObj = [
   {måndag:[
     {personal: "Karin Augustsson", activity: "Kortspel"},
     {personal: "Donovan Payan", activity: "Pokemon Go"},
-    {personal: "Ersika Simba", activity: "Switch"},
+    {personal: "Ersika Simba", activity: "Pico Park"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
-    {personal: "Lotta Paulsen", activity: "Rita"}
+    {personal: "Lotta Paulsen", activity: "Rita"},
+    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {tisdag:[
     {personal: "Roni Ali", activity: "Pingis"},
-    {personal: "Donovan Payan", activity: "Gang Beast"},
+    {personal: "Donovan Payan", activity: "Gang Beasts"},
     {personal: "Julieta Cederlöf", activity: "Rita"},
-    {personal: "Célia Karlborg", activity: "Kortspel"},
-    {Personal: "Lotta Paulsen", activity: "Bibliotek"}
+    {personal: "Célia Karlborg", activity: "Tidning"},
+    {Personal: "Lotta Paulsen", activity: "Bibliotek"},
+    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {onsdag:[
     {personal: "Mattias Petersson", activity: "Pingis"},
@@ -606,20 +608,23 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Rita"},
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Lotta Paulsen", activity: "Kortspel"},
+    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {torsdag:[
     {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Kortspel"},
-    {personal: "Sandra Hiredal", activity: "Slöjd"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Lotta Paulsen", activity: "Spel"}
+    {personal: "Lotta Paulsen", activity: "Spel"},
+    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
     {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Julieta Cederlöf", activity: "Bibliotek"},
     {personal: "Lisa Norming", activity: "Promenad"},
-    {personal: "Seidi Can", activity: "Kortspel"}
+    {personal: "Seidi Can", activity: "Kortspel"},
+    {personal: "Sandra Hiredal", activity: "Slöjd"},
+    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
 ];
 
@@ -695,7 +700,8 @@ const activityOptions =
   "Runbow",
   "Pico Park",
   "Pokemon Go",
-  "Among Us"
+  "Among Us",
+  "Skoltidning"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -747,7 +753,9 @@ const img =[
   {runbow:"runbow.jpg"},
   {picopark: "picopark.gif"},
   {pokemongo: "pokemongo.gif"},
-  {amongus: "amongus.gif"}
+  {amongus: "amongus.gif"},
+  {skoltidning: ""},
+  {Bibliotek: "bibliotek.webp"}
 
 ];
 
