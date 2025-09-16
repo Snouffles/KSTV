@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 47;
+  audioMusic.currentTime = 0;
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
-    audioMusic.currentTime = 47;
+    audioMusic.currentTime = 0;
   },43000)
 }
 
@@ -110,14 +110,16 @@ function playAudio(time){
     }
   }
   //everyday of the week
-  if(time == "8:59:30"){
+  if(time == "8:59:30" || time == "8:29:30"){
     startAudio();
   }
  
   if(time === "8:40:00"){
     pieTimer(1200);
   }
-  
+  if(time = "8:20:00"){
+    pieTimer(600);
+  }
 }
 
 
