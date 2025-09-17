@@ -114,10 +114,10 @@ function playAudio(time){
     startAudio();
   }
  
-  if(time === "8:40:00"){
+  if(time == "8:40:00"){
     pieTimer(1200);
   }
-  if(time = "8:20:00"){
+  if(time == "8:20:00"){
     pieTimer(600);
   }
 }
@@ -601,7 +601,7 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Gang Beasts"},
     {personal: "Julieta Cederlöf", activity: "Rita"},
     {personal: "Célia Karlborg", activity: "Tidning"},
-    {Personal: "Lotta Paulsen", activity: "Bibliotek"},
+    {personal: "Lotta Paulsen", activity: "Bibliotek"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {onsdag:[
@@ -634,7 +634,6 @@ const personalOptions = [
   "Roni Ali",
   "Seidi Can",
   "Julieta Cederlöf",
-  "Melina Do.Rosario",
   "Monia Dgachi",
   "Viktor Elander",
   "Sandra Hiredal",
