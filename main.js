@@ -635,7 +635,7 @@ const personalOptions = [
   "Seidi Can",
   "Julieta Cederlöf",
   "Monia Dgachi",
-  "Viktor Elander",
+  "Jenny Hultquist",
   "Sandra Hiredal",
   "Olof Lövdén",
   "Ersika Simba",
