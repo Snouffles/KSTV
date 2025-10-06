@@ -615,7 +615,6 @@ const activitiesObj = [
   {torsdag:[
     {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Kortspel"},
-    {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
@@ -626,7 +625,7 @@ const activitiesObj = [
     {personal: "Lisa Norming", activity: "Promenad"},
     {personal: "Seidi Can", activity: "Kortspel"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
-    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    
   ]},
 ];
 
