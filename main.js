@@ -295,17 +295,6 @@ let personalList= [ {
   "fredag":false
 },
 {
-  "firstName": "Roni",
-  "familyName":"Ali",
-  "photo": "",
-  "present": true,
-  "måndag": true,
-  "tisdag":true,
-  "onsdag":true, 
-  "torsdag":false,
-  "fredag":false
-},
-{
   "firstName": "Karin",
   "familyName":"Augustsson",
   "photo": "",
@@ -597,7 +586,6 @@ const activitiesObj = [
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
   ]},
   {tisdag:[
-    {personal: "Roni Ali", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Gang Beasts"},
     {personal: "Julieta Cederlöf", activity: "Rita"},
     {personal: "Célia Karlborg", activity: "Tidning"},
@@ -606,7 +594,6 @@ const activitiesObj = [
   ]},
   {onsdag:[
     {personal: "Mattias Petersson", activity: "Pingis"},
-    {personal: "Roni Ali", activity: "Losthäst"},
     {personal: "Donovan Payan", activity: "Rita"},
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Lotta Paulsen", activity: "Kortspel"},
@@ -630,13 +617,11 @@ const activitiesObj = [
 ];
 
 const personalOptions = [
-  "Roni Ali",
   "Seidi Can",
   "Julieta Cederlöf",
   "Monia Dgachi",
   "Jenny Hultquist",
   "Sandra Hiredal",
-  "Olof Lövdén",
   "Ersika Simba",
   "Peter Kosenvoima",
   "Joel Strandberg",
