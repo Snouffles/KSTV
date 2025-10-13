@@ -631,7 +631,8 @@ const personalOptions = [
   "Yvonne Grahn",
   "Donovan Payan",
   "Lotta Paulsen",
-  "Karin Augutsson"];
+  "Karin Augutsson",
+  "Célia Karlborg"];
 
 
 
