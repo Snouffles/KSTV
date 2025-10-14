@@ -740,8 +740,8 @@ const img =[
   {picopark: "picopark.gif"},
   {pokemongo: "pokemongo.gif"},
   {amongus: "amongus.gif"},
-  {skoltidning: ""},
-  {Bibliotek: "bibliotek.webp"}
+  {skoltidning: "newspapper.gif"},
+  {bibliotek: "bibliotek.webp"}
 
 ];
 
