@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 15;
+  audioMusic.currentTime = 133;
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
-    audioMusic.currentTime = 15;
+    audioMusic.currentTime = 133;
   },43000)
 }
 
