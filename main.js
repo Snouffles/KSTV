@@ -86,13 +86,13 @@ function playAudio(time){
  
   if(dayPåSvenska == "Onsdag"){
    
-    if(time =="10:20:00"){
+    if(time =="10:25:00"){
       pieTimer(1200);
     }
-     if(time === "12:10:00"){
-      pieTimer(2400);
+     if(time === "12:15:00"){
+      pieTimer(3000);
     }
-    if(time =="10:39:30" || time =="12:49:30"){
+    if(time =="10:44:30" || time =="12:04:30"){
       startAudio();
     }
     
@@ -282,6 +282,17 @@ let personalList= [ {
   "onsdag":true, 
   "torsdag":true,
   "fredag":true
+},
+{
+  "firstName": "John",
+  "familyName":"Magnusson",
+  "photo": "",
+  "present": true,
+  "måndag": false,
+  "tisdag":false,
+  "onsdag":true, 
+  "torsdag":true,
+  "fredag":false
 },
 {
   "firstName": "Melina",
@@ -632,7 +643,8 @@ const personalOptions = [
   "Donovan Payan",
   "Lotta Paulsen",
   "Karin Augutsson",
-  "Célia Karlborg"];
+  "Célia Karlborg",
+  "John Magnusson"];
 
 
 
