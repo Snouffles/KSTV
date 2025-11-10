@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 133;
+  audioMusic.currentTime = 0;
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
-    audioMusic.currentTime = 133;
+    audioMusic.currentTime = 0;
   },43000)
 }
 
@@ -89,10 +89,10 @@ function playAudio(time){
     if(time =="10:25:00"){
       pieTimer(1200);
     }
-     if(time === "13:15:00"){
+     if(time === "12:15:00"){
       pieTimer(3000);
     }
-    if(time =="10:44:30" || time =="12:04:30"){
+    if(time =="10:44:30" || time =="13:04:30"){
       startAudio();
     }
     
