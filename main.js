@@ -609,6 +609,8 @@ const activitiesObj = [
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Lotta Paulsen", activity: "Kortspel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    {personal: "Peter Kosenvoima", activity: "Bygga med Peter"},
+    {personal: "Lisa Norming", activity: "Vilostund"}
   ]},
   {torsdag:[
     {personal: "Julieta Cederlöf", activity: "Pingis"},
@@ -699,7 +701,9 @@ const activityOptions =
   "Pico Park",
   "Pokemon Go",
   "Among Us",
-  "Skoltidning"
+  "Skoltidning",
+  "Vilostund",
+  "Bygga med Peter"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -753,7 +757,10 @@ const img =[
   {pokemongo: "pokemongo.gif"},
   {amongus: "amongus.gif"},
   {skoltidning: "newspapper.gif"},
-  {bibliotek: "bibliotek.webp"}
+  {bibliotek: "bibliotek.webp"},
+  {byggamedpeter: ""},
+  {vilostund:""}
+
 
 ];
 
