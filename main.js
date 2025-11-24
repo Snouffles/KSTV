@@ -589,7 +589,6 @@ document.addEventListener('mouseover', () => {
 
 const activitiesObj = [
   {måndag:[
-    {personal: "Karin Augustsson", activity: "Kortspel"},
     {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Ersika Simba", activity: "Pico Park"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
@@ -602,9 +601,9 @@ const activitiesObj = [
     {personal: "Célia Karlborg", activity: "Tidning"},
     {personal: "Lotta Paulsen", activity: "Bibliotek"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    {personal: "Karin Augustsson", activity: "Kortspek"}
   ]},
   {onsdag:[
-    {personal: "Mattias Petersson", activity: "Pingis"},
     {personal: "Donovan Payan", activity: "Rita"},
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Lotta Paulsen", activity: "Kortspel"},
@@ -613,10 +612,11 @@ const activitiesObj = [
     {personal: "Lisa Norming", activity: "Vilostund"}
   ]},
   {torsdag:[
-    {personal: "Julieta Cederlöf", activity: "Pingis"},
+    {personal: "Julieta Cederlöf", activity: "Sola"},
     {personal: "Donovan Payan", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    {personnal: "Mattias Petersson", activity: "Pingis"}
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
