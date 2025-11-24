@@ -218,7 +218,7 @@ let personalList= [ {
   
 },
 {
-  "firstName": "Celia",
+  "firstName": "Célia",
   "familyName":"Karlborg",
   "photo": "",
   "present": true,
