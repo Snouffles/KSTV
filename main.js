@@ -598,10 +598,10 @@ const activitiesObj = [
   {tisdag:[
     {personal: "Donovan Payan", activity: "Gang Beasts"},
     {personal: "Julieta Cederlöf", activity: "Rita"},
-    {personal: "Célia Karlborg", activity: "Tidning"},
+    {personal: "Célia Karlborg", activity: "Skoltidning"},
     {personal: "Lotta Paulsen", activity: "Bibliotek"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Karin Augustsson", activity: "Kortspek"}
+    {personal: "Karin Augustsson", activity: "Kortspel"}
   ]},
   {onsdag:[
     {personal: "Donovan Payan", activity: "Rita"},
