@@ -86,7 +86,7 @@ function playAudio(time){
  
   if(dayPåSvenska == "Onsdag"){
    
-    if(time =="10:25:00"){
+    if(time =="10:30:00"){
       pieTimer(1200);
     }
      if(time === "12:15:00"){
@@ -99,13 +99,13 @@ function playAudio(time){
   }
   
   if( dayPåSvenska =="Måndag" || dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Fredag" ){
-    if(time == "10:20:00" || time == "8:45:00"){
+    if(time == "10:25:00" || time == "8:45:00"){
       pieTimer(900);
     }
-     if(time === "11:55:00"){
+     if(time === "12:00:00"){
       pieTimer(3000);
     }
-    if(time == "10:34:30" || time == "8:59:30" || time == "12:44:30"){
+    if(time == "10:39:30" || time == "8:59:30" || time == "12:49:30"){
       startAudio();
     }
   }
@@ -288,11 +288,11 @@ let personalList= [ {
   "familyName":"Magnusson",
   "photo": "",
   "present": true,
-  "måndag": false,
-  "tisdag":false,
+  "måndag": true,
+  "tisdag": true,
   "onsdag":true, 
   "torsdag":true,
-  "fredag":false
+  "fredag":true
 },
 {
   "firstName": "Melina",
