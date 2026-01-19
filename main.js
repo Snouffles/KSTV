@@ -705,7 +705,8 @@ const activityOptions =
   "Among Us",
   "Skoltidning",
   "Vilostund",
-  "Bygga med Peter"
+  "Bygga med Peter",
+  "Pussle"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -760,8 +761,9 @@ const img =[
   {amongus: "amongus.gif"},
   {skoltidning: "newspapper.gif"},
   {bibliotek: "bibliotek.webp"},
-  {byggamedpeter: ""},
-  {vilostund:""}
+  {byggamedpeter: "bygga.png"},
+  {vilostund:"vilostund.png"},
+  {pussle: "pussle.gif"}
 
 
 ];
