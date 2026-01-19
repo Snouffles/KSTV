@@ -592,38 +592,40 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Ersika Simba", activity: "Pico Park"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
-    {personal: "Lotta Paulsen", activity: "Rita"},
+    {personal: "Lotta Paulsen", activity: "Pussle"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    {personal: "Lisa Norming", activity: "Löshäst"},
   ]},
   {tisdag:[
     {personal: "Donovan Payan", activity: "Gang Beasts"},
-    {personal: "Julieta Cederlöf", activity: "Rita"},
     {personal: "Célia Karlborg", activity: "Skoltidning"},
-    {personal: "Lotta Paulsen", activity: "Bibliotek"},
+    {personal: "John Magnusson", activity: "Pingis"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Karin Augustsson", activity: "Kortspel"}
+    {personal: "Karin Augustsson", activity: "Löshäst"},
+    {personal: "Matthias Peterson", activity: "Löshäst"}
   ]},
   {onsdag:[
-    {personal: "Donovan Payan", activity: "Rita"},
-    {personal: "Julieta Cederlöf", activity: "Spel"},
-    {personal: "Lotta Paulsen", activity: "Kortspel"},
-    {personal: "Jenny Hultquist", activity: "Hundpromenad"},
+    {personal: "Donovan Payan", activity: "Among Us"},
+    {personal: "Julieta Cederlöf", activity: "Vilostund"},
+    {personal: "Mattias Petersson", activity: "Pingis"},
+    {personal: "Célia Karlborg", activity: "Löshäst"},
     {personal: "Peter Kosenvoima", activity: "Bygga med Peter"},
-    {personal: "Lisa Norming", activity: "Vilostund"}
+    {personal: "Karin Augustsson", activity: "Spel"}
   ]},
   {torsdag:[
-    {personal: "Julieta Cederlöf", activity: "Sola"},
+    {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Donovan Payan", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Mattias Petersson", activity: "Pingis"}
+    {personal: "Seidi Can", activity: "Rita"},
+    {personal: "Lisa Norming", activity: "Löshäst"}
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
     {personal: "Donovan Payan", activity: "Switch"},
-    {personal: "Julieta Cederlöf", activity: "Bibliotek"},
+    {personal: "Ersika Simba", activity: "Switch"},
     {personal: "Lisa Norming", activity: "Promenad"},
-    {personal: "Seidi Can", activity: "Kortspel"},
+    {personal: "Seidi Can", activity: "Löshäst"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     
   ]},
