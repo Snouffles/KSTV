@@ -763,7 +763,8 @@ const img =[
   {bibliotek: "bibliotek.webp"},
   {byggamedpeter: "bygga.png"},
   {vilostund:"vilostund.png"},
-  {pussle: "pussle.gif"}
+  {pussle: "pussle.gif"},
+  {löshäst: "häst.gig"}
 
 
 ];
