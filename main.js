@@ -590,7 +590,6 @@ document.addEventListener('mouseover', () => {
 const activitiesObj = [
   {måndag:[
     {personal: "Donovan Payan", activity: "Pokemon Go"},
-    {personal: "Ersika Simba", activity: "Pico Park"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Lotta Paulsen", activity: "Pussle"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
@@ -602,7 +601,7 @@ const activitiesObj = [
     {personal: "John Magnusson", activity: "Pingis"},
     {personal: "Jenny Hultquist", activity: "Löshäst"},
     {personal: "Karin Augustsson", activity: "Spel"},
-    {personal: "Matthias Peterson", activity: "Löshäst"}
+    {personal: "Matthias Petersson", activity: "Löshäst"}
   ]},
   {onsdag:[
     {personal: "Donovan Payan", activity: "Among Us"},
@@ -624,7 +623,7 @@ const activitiesObj = [
     {personal: "Lotta Paulsen", activity: "Quiz"},
     {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "Lisa Norming", activity: "Promenad"},
+    {personal: "John Magnusson", activity: "Löshäst"},
     {personal: "Seidi Can", activity: "Löshäst"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     
@@ -706,7 +705,8 @@ const activityOptions =
   "Skoltidning",
   "Vilostund",
   "Bygga med Peter",
-  "Pussle"
+  "Pussle",
+  "Löshäst"
 ];
 const img =[
   {basket: "basket.gif"},
@@ -764,7 +764,7 @@ const img =[
   {byggamedpeter: "bygga.png"},
   {vilostund:"vilostund.png"},
   {pussle: "pussle.gif"},
-  {löshäst: "häst.gig"}
+  {löshäst: "häst.gif"}
 
 
 ];
