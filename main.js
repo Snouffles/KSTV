@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 156;
+  audioMusic.currentTime = 0;  //väljer vilken sekund börjar låten. 
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
