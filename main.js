@@ -591,7 +591,7 @@ const activitiesObj = [
   {måndag:[
     {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
-    {personal: "Lotta Paulsen", activity: "Pussle"},
+    {personal: "Lotta Paulsen", activity: "Rita"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
     {personal: "Lisa Norming", activity: "Löshäst"},
   ]},
@@ -605,7 +605,7 @@ const activitiesObj = [
   ]},
   {onsdag:[
     {personal: "Donovan Payan", activity: "Among Us"},
-    {personal: "Julieta Cederlöf", activity: "Vilostund"},
+    {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Mattias Petersson", activity: "Pingis"},
     {personal: "Célia Karlborg", activity: "Löshäst"},
     {personal: "Peter Kosenvoima", activity: "Bygga med Peter"},
