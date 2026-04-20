@@ -597,7 +597,7 @@ const activitiesObj = [
   ]},
   {tisdag:[
     {personal: "Donovan Payan", activity: "Gang Beasts"},
-    {personal: "Célia Karlborg", activity: "Skoltidning"},
+    {personal: "Célia Karlborg", activity: "Rita"},
     {personal: "John Magnusson", activity: "Pingis"},
     {personal: "Jenny Hultquist", activity: "Löshäst"},
     {personal: "Karin Augustsson", activity: "Spel"},
