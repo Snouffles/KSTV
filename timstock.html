@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00:00 - Timer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            color: #e1d6d6;
+        }
+
+        /* 20 Circles Container */
+        .circle-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ddd; /* Off state */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Solid Lit State for remaining minutes */
+        .circle.lit {
+            background-color: #4CAF50;
+            box-shadow: 0 0 8px #4CAF50;
+        }
+
+        /* Blinking State for the active minute */
+        .circle.blink {
+            background-color: #4CAF50;
+            box-shadow: 0 0 8px #4CAF50;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0.2; }
+        }
+
+        /* Main Display */
+        h1 {
+            font-size: 5rem;
+            margin: 0 0 30px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Time Buttons */
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .time-btn {
+            font-size: 1.2rem;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+        }
+        #time-btn-1{
+            background-color: #1e00ff;
+            color: white;
+        }
+        #time-btn-2{
+            background-color: #4CAF50;
+            color: white;
+        }
+        #time-btn-3{
+            background-color: #ffff00;
+            color: black;
+        }
+        #time-btn-4{
+            background-color: #e40000;
+            color: white;
+        }
+        .time-btn:hover:not(:disabled) {
+            background-color: #000000;
+            color: #ddd;
+        }
+
+        .time-btn:disabled {
+            background-color: #90CAF9;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Stop Button */
+        #stop-btn {
+            font-size: 1.2rem;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #stop-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        #stop-btn:disabled {
+            background-color: #ef9a9a;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle-container" id="circle-container"></div>
+
+    <h1 id="time-display">00:00</h1>
+
+    <div class="buttons-container">
+        <button class="time-btn" id="time-btn-1" onclick="startTimer(5)">5</button>
+        <button class="time-btn" id="time-btn-2" onclick="startTimer(10)">10</button>
+        <button class="time-btn" id="time-btn-3" onclick="startTimer(15)">15</button>
+        <button class="time-btn" id="time-btn-4" onclick="startTimer(20)">20</button>
+    </div>
+
+    <button id="stop-btn" onclick="stopTimer()" disabled>Stop</button>
+
+    <script>
+        // DOM Elements
+        const circleContainer = document.getElementById('circle-container');
+        const display = document.getElementById('time-display');
+        const timeButtons = document.querySelectorAll('.time-btn');
+        const stopBtn = document.getElementById('stop-btn');
+
+        // Timer Variables
+        let interval;
+        let totalSeconds = 0;
+        let currentSeconds = 0;
+
+        // Initialize exactly 20 circles
+        const totalCircles = 20;
+        for (let i = 0; i < totalCircles; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            circleContainer.appendChild(circle);
+        }
+        const circles = document.querySelectorAll('.circle');
+
+        // Start Timer Logic
+        function startTimer(minutes) {
+            totalSeconds = minutes * 60;
+            currentSeconds = totalSeconds;
+
+            // Disable number buttons and enable stop button
+            timeButtons.forEach(btn => btn.disabled = true);
+            stopBtn.disabled = false;
+
+            updateDisplay();
+            updateCircles();
+
+            clearInterval(interval);
+
+            // Start countdown
+            interval = setInterval(() => {
+                currentSeconds--;
+
+                if (currentSeconds <= 0) {
+                    clearInterval(interval);
+                    currentSeconds = 0;
+                    resetButtons();
+                    document.title = "Time's up!";
+                }
+
+                updateDisplay();
+                updateCircles();
+            }, 1000);
+        }
+
+        // Stop Timer Logic
+        function stopTimer() {
+            if (confirm("Are you sure you want to stop the timer?")) {
+                clearInterval(interval);
+                currentSeconds = 0;
+                totalSeconds = 0;
+                
+                updateDisplay();
+                updateCircles();
+                resetButtons();
+                document.title = "00:00 - Timer";
+            }
+        }
+
+        // Format and Update the Text Display & Tab Title
+        function updateDisplay() {
+            const minutes = Math.floor(currentSeconds / 60);
+            const seconds = currentSeconds % 60;
+            
+            const formattedTime = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            display.textContent = formattedTime;
+            
+            if (currentSeconds > 0) {
+                document.title = `${formattedTime} - Timer Running`;
+            }
+        }
+
+        // Update the 20 Circles (Active minute blinks)
+        function updateCircles() {
+            // Find which minute block we are currently in (e.g., 1199 seconds = minute 20)
+            const activeMinute = Math.ceil(currentSeconds / 60);
+
+            circles.forEach((circle, index) => {
+                const circleMinute = index + 1; // Circles are 1 to 20 left-to-right
+                
+                // Clear existing states
+                circle.classList.remove('lit', 'blink');
+
+                // If timer is off, leave them completely blank
+                if (currentSeconds === 0) return;
+
+                if (circleMinute === activeMinute) {
+                    // The current minute circle blinks
+                    circle.classList.add('blink');
+                } else if (circleMinute < activeMinute) {
+                    // Circles below the active minute stay solid green
+                    circle.classList.add('lit');
+                }
+                // Circles above the active minute automatically stay off
+            });
+        }
+
+        // Reset Button States
+        function resetButtons() {
+            timeButtons.forEach(btn => btn.disabled = false);
+            stopBtn.disabled = true;
+        }
+    </script>
+</body>
+</html>
