@@ -16,7 +16,24 @@
             background-color: #000000;
             color: #e1d6d6;
         }
+/* Float (PiP) Toggle Button */
+        #pip-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #9C27B0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
+        #pip-btn:hover {
+            background-color: #7B1FA2;
+        }
         /* 20 Circles Container */
         .circle-container {
             display: flex;
@@ -124,7 +141,7 @@
     </style>
 </head>
 <body>
-
+    <button id="pip-btn" onclick="togglePiP()">Float (PiP)</button>
     <div class="circle-container" id="circle-container"></div>
 
     <h1 id="time-display">00:00</h1>
@@ -139,6 +156,7 @@
     <button id="stop-btn" onclick="stopTimer()" disabled>Stop</button>
 
     <script>
+        
         // DOM Elements
         const circleContainer = document.getElementById('circle-container');
         const display = document.getElementById('time-display');
@@ -150,7 +168,25 @@
         let totalSeconds = 0;
         let currentSeconds = 0;
 
-        // Initialize exactly 20 circles
+        // Picture-in-Picture Variables
+        const pipCanvas = document.createElement('canvas');
+        const pipVideo = document.createElement('video');
+        const ctx = pipCanvas.getContext('2d');
+        let isPiP = false;
+        let pipDrawInterval;
+
+        // Set up the hidden PiP elements
+        pipCanvas.width = 400;
+        pipCanvas.height = 200;
+        pipVideo.muted = true;
+
+        // Listen for PiP window closing
+        pipVideo.addEventListener('leavepictureinpicture', () => {
+            isPiP = false;
+            clearInterval(pipDrawInterval);
+        });
+
+        // Initialize exactly 20 HTML circles
         const totalCircles = 20;
         for (let i = 0; i < totalCircles; i++) {
             const circle = document.createElement('div');
@@ -164,16 +200,14 @@
             totalSeconds = minutes * 60;
             currentSeconds = totalSeconds;
 
-            // Disable number buttons and enable stop button
             timeButtons.forEach(btn => btn.disabled = true);
             stopBtn.disabled = false;
 
             updateDisplay();
             updateCircles();
-
+            if (isPiP) drawPiP(); // Force a draw update
             clearInterval(interval);
 
-            // Start countdown
             interval = setInterval(() => {
                 currentSeconds--;
 
@@ -186,6 +220,9 @@
 
                 updateDisplay();
                 updateCircles();
+                
+                // Force an update into the PiP if the browser is throttling intervals
+                if (isPiP) drawPiP(); 
             }, 1000);
         }
 
@@ -200,54 +237,129 @@
                 updateCircles();
                 resetButtons();
                 document.title = "00:00 - Timer";
+                if (isPiP) drawPiP();
             }
         }
 
-        // Format and Update the Text Display & Tab Title
         function updateDisplay() {
             const minutes = Math.floor(currentSeconds / 60);
             const seconds = currentSeconds % 60;
-            
-            const formattedTime = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             
             display.textContent = formattedTime;
-            
-            if (currentSeconds > 0) {
-                document.title = `${formattedTime} - Timer Running`;
-            }
+            if (currentSeconds > 0) document.title = `${formattedTime} - Timer Running`;
         }
 
-        // Update the 20 Circles (Active minute blinks)
         function updateCircles() {
-            // Find which minute block we are currently in (e.g., 1199 seconds = minute 20)
             const activeMinute = Math.ceil(currentSeconds / 60);
 
             circles.forEach((circle, index) => {
-                const circleMinute = index + 1; // Circles are 1 to 20 left-to-right
-                
-                // Clear existing states
+                const circleMinute = index + 1;
                 circle.classList.remove('lit', 'blink');
 
-                // If timer is off, leave them completely blank
                 if (currentSeconds === 0) return;
 
                 if (circleMinute === activeMinute) {
-                    // The current minute circle blinks
                     circle.classList.add('blink');
                 } else if (circleMinute < activeMinute) {
-                    // Circles below the active minute stay solid green
                     circle.classList.add('lit');
                 }
-                // Circles above the active minute automatically stay off
             });
         }
 
-        // Reset Button States
         function resetButtons() {
             timeButtons.forEach(btn => btn.disabled = false);
             stopBtn.disabled = true;
         }
+
+        // ==========================================
+        // PICTURE-IN-PICTURE (PiP) LOGIC FIX
+        // ==========================================
+        async function togglePiP() {
+            if (document.pictureInPictureElement) {
+                document.exitPictureInPicture();
+                return;
+            }
+
+            // 1. Mark as active and start drawing immediately 
+            // so the video stream isn't blank when PiP opens.
+            isPiP = true;
+            drawPiP(); 
+            
+            // 2. Use setInterval instead of requestAnimationFrame so it runs in background tabs
+            if (pipDrawInterval) clearInterval(pipDrawInterval);
+            pipDrawInterval = setInterval(drawPiP, 50); // 20 frames per second
+
+            // 3. Start the video stream
+            pipVideo.srcObject = pipCanvas.captureStream(30);
+            
+            try {
+                await pipVideo.play();
+                await pipVideo.requestPictureInPicture();
+            } catch (error) {
+                alert("Your browser does not support Picture-in-Picture or it was blocked.");
+                isPiP = false;
+                clearInterval(pipDrawInterval);
+            }
+        }
+
+        // Draw the timer onto the hidden canvas
+        function drawPiP() {
+            if (!isPiP) return;
+            
+            // Black Background
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, pipCanvas.width, pipCanvas.height);
+
+            // Draw 20 Circles
+            const activeMinute = Math.ceil(currentSeconds / 60);
+            const circleRadius = 6;
+            const gap = 16; 
+            const totalWidth = (totalCircles * gap) - (gap - circleRadius * 2);
+            const startX = (pipCanvas.width - totalWidth) / 2 + 5;
+
+            for (let i = 0; i < totalCircles; i++) {
+                const circleMinute = i + 1;
+                let color = 'white'; // Default white for circle
+
+                if (currentSeconds > 0) {
+                    if (circleMinute === activeMinute) {
+                        // Math trick to make it blink every half second
+                        const isBlinkingOn = Math.floor(Date.now() / 500) % 2 === 0;
+                        color = isBlinkingOn ? '#4CAF50' : 'white';
+                    } else if (circleMinute < activeMinute) {
+                        color = '#4CAF50'; //blink green
+                    }
+                }
+
+                ctx.beginPath();
+                ctx.arc(startX + (i * gap), 50, circleRadius, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                
+                // Add a glow effect if lit
+                if (color === '#4CAF50') {
+                    ctx.shadowColor = '#4CAF50';
+                    ctx.shadowBlur = 6;
+                } else {
+                    ctx.shadowBlur = 0;
+                }
+                
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            // Draw Text Timer
+            const minutes = Math.floor(currentSeconds / 60);
+            const seconds = currentSeconds % 60;
+            const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 70px "Segoe UI", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(formattedTime, pipCanvas.width / 2, pipCanvas.height / 2 + 30);
+        }
+    
     </script>
 </body>
 </html>
