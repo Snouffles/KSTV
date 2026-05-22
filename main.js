@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function startAudio(){
-  audioMusic.currentTime = 0;  //väljer vilken sekund börjar låten. 
+  audioMusic.currentTime = 63;  //väljer vilken sekund börjar låten. 
   audioMusic.play();
   setTimeout(()=>{
     audioMusic.pause();
@@ -616,7 +616,6 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Seidi Can", activity: "Rita"},
     {personal: "Lisa Norming", activity: "Löshäst"}
   ]},
   {fredag:[
@@ -624,7 +623,6 @@ const activitiesObj = [
     {personal: "Donovan Payan", activity: "Switch"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "John Magnusson", activity: "Löshäst"},
-    {personal: "Seidi Can", activity: "Löshäst"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
     
   ]},
