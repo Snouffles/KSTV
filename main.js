@@ -84,37 +84,37 @@ function pieTimer(seconds){
 
 function playAudio(time){
  
-  if(dayPåSvenska == "Onsdag"){
+  if(dayPåSvenska == "Fredag"){
    
-    if(time =="10:30:00"){
+    if(time =="9:50:00"){
       pieTimer(1200);
     }
-     if(time === "12:15:00"){
+     if(time === "11:45:00"){
       pieTimer(3000);
     }
-    if(time =="10:44:30" || time =="13:04:30"){
+    if(time =="10:04:30" || time =="12:34:30"){
       startAudio();
     }
     
   }
   
-  if( dayPåSvenska =="Måndag" || dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Fredag" ){
-    if(time == "10:25:00" || time == "8:45:00"){
+  if( dayPåSvenska =="Måndag" || dayPåSvenska =="Tisdag" || dayPåSvenska == "Torsdag" || dayPåSvenska == "Onsdag" ){
+    if(time == "10:30:00" || time == "8:35:00"){
       pieTimer(900);
     }
-     if(time === "12:00:00"){
+     if(time === "12:05:00"){
       pieTimer(3000);
     }
-    if(time == "10:39:30" || time == "8:59:30" || time == "12:49:30"){
+    if(time == "10:44:30" || time == "8:49:30" || time == "12:54:30"){
       startAudio();
     }
   }
   //everyday of the week
-  if(time == "8:59:30" || time == "8:29:30"){
+  if(time == "8:49:30" || time == "8:29:30"){
     startAudio();
   }
  
-  if(time == "8:40:00"){
+  if(time == "8:30:00"){
     pieTimer(1200);
   }
   if(time == "8:20:00"){
@@ -360,7 +360,17 @@ let personalList= [ {
   "torsdag":true,
   "fredag":false
 },
-
+{
+  "firstName": "Martin",
+  "familyName":"Engström",
+  "photo": "",
+  "present": true,
+  "måndag": true,
+  "tisdag":true,
+  "onsdag":true, 
+  "torsdag":true,
+  "fredag":true
+},
 {
   "firstName": "Ersika",
   "familyName":"Simba",
@@ -589,14 +599,14 @@ document.addEventListener('mouseover', () => {
 
 const activitiesObj = [
   {måndag:[
-    {personal: "Donovan Payan", activity: "Pokemon Go"},
+    {personal: "Martin Engström", activity: "Pokemon Go"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Lotta Paulsen", activity: "Rita"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
     {personal: "Lisa Norming", activity: "Löshäst"},
   ]},
   {tisdag:[
-    {personal: "Donovan Payan", activity: "Gang Beasts"},
+    {personal: "Martin Engström", activity: "Gang Beasts"},
     {personal: "Célia Karlborg", activity: "Rita"},
     {personal: "John Magnusson", activity: "Pingis"},
     {personal: "Jenny Hultquist", activity: "Löshäst"},
@@ -604,7 +614,7 @@ const activitiesObj = [
     {personal: "Matthias Petersson", activity: "Löshäst"}
   ]},
   {onsdag:[
-    {personal: "Donovan Payan", activity: "Among Us"},
+    {personal: "Martin Engström", activity: "Among Us"},
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Mattias Petersson", activity: "Pingis"},
     {personal: "Célia Karlborg", activity: "Löshäst"},
@@ -613,14 +623,14 @@ const activitiesObj = [
   ]},
   {torsdag:[
     {personal: "Julieta Cederlöf", activity: "Spel"},
-    {personal: "Donovan Payan", activity: "Kortspel"},
+    {personal: "Martin Engström", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
     {personal: "Lisa Norming", activity: "Löshäst"}
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
-    {personal: "Donovan Payan", activity: "Switch"},
+    {personal: "Martin Engström", activity: "Switch"},
     {personal: "Ersika Simba", activity: "Switch"},
     {personal: "John Magnusson", activity: "Löshäst"},
     {personal: "Sandra Hiredal", activity: "Slöjd"},
