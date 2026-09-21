@@ -655,7 +655,8 @@ const personalOptions = [
   "Lotta Paulsen",
   "Karin Augutsson",
   "Célia Karlborg",
-  "John Magnusson"];
+  "John Magnusson",
+  "Martin Engström"];
 
 
 
@@ -714,7 +715,8 @@ const activityOptions =
   "Vilostund",
   "Bygga med Peter",
   "Pussle",
-  "Löshäst"
+  "Löshäst",
+  "Pärlplatta"
 ];
 const img =[
   {basket: "basket.gif"},
