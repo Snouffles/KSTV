@@ -599,26 +599,27 @@ document.addEventListener('mouseover', () => {
 
 const activitiesObj = [
   {måndag:[
-    {personal: "Martin Engström", activity: "Pokemon Go"},
+    {personal: "Donovan Payan", activity: "Pokemon Go"},
     {personal: "Julieta Cederlöf", activity: "Pingis"},
     {personal: "Lotta Paulsen", activity: "Rita"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Lisa Norming", activity: "Löshäst"},
+    {personal: "Martin Engström", activity: "Löshäst"},
+    {personal: "Ersika Simba", activity: "Löshäst"},
   ]},
   {tisdag:[
     {personal: "Martin Engström", activity: "Gang Beasts"},
-    {personal: "Célia Karlborg", activity: "Rita"},
-    {personal: "John Magnusson", activity: "Pingis"},
+    {personal: "Sandra Hiredal", activity: "Rita"},
+    {personal: "Peter Kosenvoima", activity: "Pingis"},
     {personal: "Jenny Hultquist", activity: "Löshäst"},
-    {personal: "Karin Augustsson", activity: "Spel"},
-    {personal: "Matthias Petersson", activity: "Löshäst"}
+    {personal: "Donovan Payan", activity: "Spel"},
+    {personal: "Julieta Cederlöf", activity: "Löshäst"}
   ]},
   {onsdag:[
     {personal: "Martin Engström", activity: "Among Us"},
     {personal: "Julieta Cederlöf", activity: "Spel"},
     {personal: "Mattias Petersson", activity: "Pingis"},
     {personal: "Célia Karlborg", activity: "Löshäst"},
-    {personal: "Peter Kosenvoima", activity: "Bygga med Peter"},
+    {personal: "Donovan Payan", activity: "Fotboll"},
     {personal: "Karin Augustsson", activity: "Löshäst"}
   ]},
   {torsdag:[
@@ -626,14 +627,15 @@ const activitiesObj = [
     {personal: "Martin Engström", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Lisa Norming", activity: "Löshäst"}
+    {personal: "Donovan Payan", activity: "Löshäst"}
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
     {personal: "Martin Engström", activity: "Switch"},
     {personal: "Ersika Simba", activity: "Switch"},
-    {personal: "John Magnusson", activity: "Löshäst"},
-    {personal: "Sandra Hiredal", activity: "Slöjd"},
+    {personal: "Donovan Payan", activity: "Löshäst"},
+    {personal: "Peter Kosenvoima", activity: "Slöjd"},
+    {personal: "Sandra Hiredal", activity: "Slöjd"}
     
   ]},
 ];
@@ -657,7 +659,6 @@ const personalOptions = [
   "Célia Karlborg",
   "John Magnusson",
   "Martin Engström"];
-
 
 
 const activityOptions = 
