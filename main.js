@@ -67,7 +67,7 @@ function startAudio(){
   setTimeout(()=>{
     audioMusic.pause();
     audioMusic.currentTime = 0;
-  },45000)
+  },60000)
 }
 
 function pieTimer(seconds){
@@ -92,7 +92,7 @@ function playAudio(time){
      if(time === "11:45:00"){
       pieTimer(3000);
     }
-    if(time =="10:04:30" || time =="12:34:30"){
+    if(time =="10:03:45" || time =="12:33:45"){
       startAudio();
     }
     
@@ -105,12 +105,12 @@ function playAudio(time){
      if(time === "12:05:00"){
       pieTimer(3000);
     }
-    if(time == "10:44:30" || time == "8:49:30" || time == "12:54:30"){
+    if(time == "10:43:45" || time == "8:48:45" || time == "12:53:45"){
       startAudio();
     }
   }
   //everyday of the week
-  if(time == "8:49:30" || time == "8:29:30"){
+  if(time == "8:48:45" || time == "8:28:45"){
     startAudio();
   }
  
