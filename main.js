@@ -605,6 +605,7 @@ const activitiesObj = [
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
     {personal: "Martin Engström", activity: "Löshäst"},
     {personal: "Ersika Simba", activity: "Löshäst"},
+    {personal: "Ersika Simba", activity: "Switch"}
   ]},
   {tisdag:[
     {personal: "Martin Engström", activity: "Gang Beasts"},
@@ -627,7 +628,8 @@ const activitiesObj = [
     {personal: "Martin Engström", activity: "Kortspel"},
     {personal: "Lotta Paulsen", activity: "Spel"},
     {personal: "Jenny Hultquist", activity: "Hundpromenad"},
-    {personal: "Donovan Payan", activity: "Löshäst"}
+    {personal: "Donovan Payan", activity: "Löshäst"},
+    {personal: "Ersika Simba", activity: "Switch"}
   ]},
   {fredag:[
     {personal: "Lotta Paulsen", activity: "Quiz"},
